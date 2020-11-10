@@ -9,7 +9,14 @@
 
 ### Overview
 
-CookBook is an online database of recipes. 
+CookBook is an online database of recipes.
+
+• Browse recipes by style.
+
+• Upload your own recipes.
+
+• Review recipes submitted by other users.
+
 
 ***
 
@@ -26,8 +33,10 @@ CookBook is an online database of recipes.
 
 ### Wireframes
 
+Homepage
 ![Home](https://i.imgur.com/XsAGYkX.png)
-![List](https://i.imgur.com/4wLMoiS.png)
+
+Recipe Page
 ![Read Recipe](https://i.imgur.com/XR92tML.png)
 
 ***
@@ -42,7 +51,20 @@ To get started, please install React, Express, Node, Mongoose, and MongoDB. You 
 
 ### User Stories
 
-With CookBook, a user can add their favorite recipe to an online database. Recipe entries must include a description, photo, prep time, and a cuisine type. Users can also browse recipes by type of cuisine, and leave reviews on their favorite reviews. 
+With CookBook, a user can add their favorite recipe to an online database. Recipe entries must include a description, photo, prep time, and a cuisine type. Users can also browse recipes by type of cuisine, and leave reviews on their favorite reviews. To begin, a user needs to login or create an account. Next, a user can browse recipes organized by style of cuisine, or upload their own. 
+
+***
+### Full Entity Relationship Diagram
+
+![Full Entity Relationship Diagram](https://i.imgur.com/SzRlHjv.png)
+
+***
+
+### Component Hierarchy Diagram
+
+![Component Hierarchy Diagram](https://i.imgur.com/X83YhTF.png)
+
+
 
 ***
 
