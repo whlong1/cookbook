@@ -18,7 +18,7 @@ const Recipe = new Schema(
 
 module.exports = mongoose.model('recipes', Recipe)
 
-// Recipe
+// Recipe requirements
 // 	title
 // 	author
 // 	preparation time
