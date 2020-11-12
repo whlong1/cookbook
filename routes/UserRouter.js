@@ -2,6 +2,14 @@ const Router = require('express').Router()
 
 const UserController = require('../controllers/UserController')
 
+const {
+    createToken,
+    verifyToken,
+    getToken
+  } = require('../middleware/JwtHandler')
+
+Router.post('/register', UserController.CreateUser)
+
 Router.post('/add', UserController.AddUser)
 //POST-> localhost:3000/home/users/add
 
@@ -13,6 +21,15 @@ Router.delete('/delete/:id', UserController.DeleteUser)
 
 Router.put('/edit/:id', UserController.UpdateUser)
 //PUT-> localhost:3000/home/users/edit/5fad490a37d80bf073fe36ee
+
+Router.post('/login', UserController.SignInUser, createToken)
+
+Router.get(
+    '/refresh/session',
+    getToken,
+    verifyToken,
+    UserController.RefreshSession
+  )
 
 
 

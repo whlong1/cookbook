@@ -1,4 +1,29 @@
 const User = require('../models/user');
+const {
+    checkPassword,
+    generatePassword
+  } = require('../middleware/PasswordHandler')
+
+
+//=========
+
+const CreateUser = async (request, response) => {
+    try {
+        const body = request.body
+        const password_digest = await generatePassword(body.password)
+        const user = new User({
+        name: body.name,
+        email: body.email,
+        password_digest
+    })
+      user.save()
+      response.send(user)
+    } catch (error) {
+      throw error
+    }
+}
+
+//=========
 
 const AddUser = async (request, response) => {
     try {
@@ -57,6 +82,7 @@ const UpdateUser = async (request, response) => {
 }
 
 module.exports = {
+    CreateUser,
     AddUser,
     GetUser,
     DeleteUser,

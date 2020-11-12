@@ -27,14 +27,6 @@ const createToken = (request, response) => {
 
 
 
-
-
-
-
-
-
-
-
 module.exports = {
     createToken,
     verifyToken,
