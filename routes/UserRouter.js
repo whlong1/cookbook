@@ -9,6 +9,7 @@ const {
   } = require('../middleware/JwtHandler')
 
 Router.post('/register', UserController.CreateUser)
+//POST-> localhost:3001/home/users/register
 
 Router.post('/add', UserController.AddUser)
 //POST-> localhost:3000/home/users/add
@@ -23,6 +24,7 @@ Router.put('/edit/:id', UserController.UpdateUser)
 //PUT-> localhost:3000/home/users/edit/5fad490a37d80bf073fe36ee
 
 Router.post('/login', UserController.SignInUser, createToken)
+//POST->localhost:3000/home/users/login
 
 Router.get(
     '/refresh/session',

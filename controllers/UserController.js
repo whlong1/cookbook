@@ -23,6 +23,35 @@ const CreateUser = async (request, response) => {
     }
 }
 
+const SignInUser = async (request, response, next) => {
+    try {
+      const user = await User.findOne({email: request.body.email})
+      console.log(user)
+      if (
+        user &&
+        (await checkPassword(request.body.password, user.password_digest))
+      ) {
+        const payload = {
+          _id: user._id,
+          name: user.name
+        }
+        response.locals.payload = payload
+        return next()
+      }
+      response.status(401).send({msg: 'Unauthorized'})
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const RefreshSession = (request, response) => {
+    try {
+      const token = response.locals.token
+      response.send({user: jwt.decode(token), token: response.locals.token})
+    } catch (error) {
+      throw error
+    }
+  }
 //=========
 
 const AddUser = async (request, response) => {
@@ -81,8 +110,13 @@ const UpdateUser = async (request, response) => {
     }
 }
 
+
+
+
 module.exports = {
     CreateUser,
+    SignInUser,
+    RefreshSession,
     AddUser,
     GetUser,
     DeleteUser,

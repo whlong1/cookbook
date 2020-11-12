@@ -40,3 +40,12 @@ localhost:3000/home/cuisine/add
 	"cuisine_id": "5fad589718f1b9f74987a725",
 }
 
+
+
+{
+  "user": {
+    "_id": "5fadb05ea05e15172aedcc44",
+    "name": "Hunter"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFkYjA1ZWEwNWUxNTE3MmFlZGNjNDQiLCJuYW1lIjoiSHVudGVyIiwiaWF0IjoxNjA1MjE4NDI5fQ.fQNva1rv1247jjLjfhpdKoGxVyBC0OXgKYxXlXS6h8s"
+}
