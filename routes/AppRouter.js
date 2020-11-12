@@ -2,13 +2,14 @@ const Router = require('express').Router()
 
 const RecipeRouter = require('./RecipeRouter')
 const UserRouter = require('./UserRouter')
+const ReviewRouter = require('./ReviewRouter')
+const CuisineRouter = require('./CuisineRouter')
 
 
 Router.use('/recipes', RecipeRouter)
-//1. localhost:3002/browse/albums/create
-//2. localhost:3002/browse/albums/all
-
 Router.use('/users', UserRouter)
+Router.use('/reviews', ReviewRouter)
+Router.use('/cuisines', CuisineRouter)
 
 
 module.exports = Router

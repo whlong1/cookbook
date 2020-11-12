@@ -12,11 +12,6 @@ const AddUser = async (request, response) => {
     }
 }
 
-
-
-
-
-
 module.exports = {
     AddUser,
 }

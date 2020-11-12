@@ -8,3 +8,8 @@
 	"cuisine_id": "goodbye1",
 	"review": "testing1"
 }
+
+node:61620) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Successfully connected to MongoDB.
+POST /home/recipes/add 500 15.711 ms - 195
