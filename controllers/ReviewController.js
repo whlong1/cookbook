@@ -1,5 +1,17 @@
 const Review = require('../models/review');
 
+// const AddReview = async (request, response) => {
+//     try {
+//         const review = await new Review(request.body)
+//         await review.save()
+//         return response.status(201).json({
+//             review,
+//         });
+//     } catch (error) {
+//         return response.status(500).json({ error: error.message })
+//     }
+// }
+
 const AddReview = async (request, response) => {
     try {
         const review = await new Review(request.body)
@@ -11,6 +23,21 @@ const AddReview = async (request, response) => {
         return response.status(500).json({ error: error.message })
     }
 }
+
+const GetReview = async (request, response) => {
+    try {
+        const {id} = request.params
+        const review = await Review.findById(id)
+        if (review) {
+            return response.status(200).json({review})
+        }
+        return response.status(404).send('Cannot find review')
+    } catch (error) {
+        return response.status(500).send(error.message)
+    }
+}
+
+
 
 const DeleteReview = async (request, response) => {
     try{
@@ -44,6 +71,7 @@ const UpdateReview = async (request, response) => {
 
 module.exports = {
     AddReview,
+    GetReview,
     DeleteReview,
     UpdateReview
 }

@@ -3,7 +3,10 @@ const Router = require('express').Router()
 const UserController = require('../controllers/UserController')
 
 Router.post('/add', UserController.AddUser)
-//POST-> localhost:3000/home/users/new
+//POST-> localhost:3000/home/users/add
+
+Router.get('/search/:id', UserController.GetUser)
+//GET -> localhost:3000/home/users/search/5fad6efaec3f93ff91750437
 
 Router.delete('/delete/:id', UserController.DeleteUser)
 //DELETE-> localhost:3000/home/users/delete/5fad5a0b223c0bf85226d3f8

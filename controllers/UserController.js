@@ -12,6 +12,20 @@ const AddUser = async (request, response) => {
     }
 }
 
+const GetUser = async (request, response) => {
+    try {
+        const {id} = request.params
+        const user = await User.findById(id)
+        if (user) {
+            return response.status(200).json({user})
+        }
+        return response.status(404).send('User does not exist')
+    } catch (error) {
+        return response.status(500).send(error.message)
+    }
+}
+
+
 const DeleteUser = async (request, response) => {
     try{
         const {id} = request.params
@@ -44,6 +58,7 @@ const UpdateUser = async (request, response) => {
 
 module.exports = {
     AddUser,
+    GetUser,
     DeleteUser,
     UpdateUser
 }

@@ -26,7 +26,7 @@ const Recipe = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'users'
       },
-    cuisine_id: {
+    cuisine: {
       type: Schema.Types.ObjectId,
       ref: 'cuisine'
     },

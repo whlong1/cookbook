@@ -17,7 +17,7 @@ Router.delete('/delete/:id', RecipeController.DeleteRecipe)
 
 
 Router.put('/edit/:id', RecipeController.UpdateRecipe)
-//PUT-> localhost:3000/home/recipes/edit/
+//PUT->localhost:3000/home/recipes/edit/
 
 
 module.exports = Router
