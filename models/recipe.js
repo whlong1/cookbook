@@ -28,7 +28,7 @@ const Recipe = new Schema(
       },
     cuisine_id: {
       type: Schema.Types.ObjectId,
-      ref: 'cuisines'
+      ref: 'cuisine'
     },
     reviews: [
       {

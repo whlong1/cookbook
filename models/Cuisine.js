@@ -7,14 +7,18 @@ const Cuisine = new Schema(
       type: String,
       required: true
     },
+    image: {
+      type: String,
+      required: true
+    },
     recipes: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'reviews'
+        ref: 'recipes'
       }
     ]
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('cuisines', Cuisine)
+module.exports = mongoose.model('cuisine', Cuisine)

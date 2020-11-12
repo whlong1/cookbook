@@ -9,7 +9,7 @@ const CuisineRouter = require('./CuisineRouter')
 Router.use('/recipes', RecipeRouter)
 Router.use('/users', UserRouter)
 Router.use('/reviews', ReviewRouter)
-Router.use('/cuisines', CuisineRouter)
+Router.use('/cuisine', CuisineRouter)
 
 
 module.exports = Router
