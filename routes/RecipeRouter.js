@@ -1,10 +1,23 @@
-const { Router } = require('express')
-const controllers = require('../controllers')
-const router = Router()
+const Router = require('express').Router()
 
-router.get('/', (request, response) => res.send('Root test'))
+const RecipeController = require('../controllers/RecipeController')
 
-router.post('/recipes', controllers.addRecipe)
-//POST->localhost:3000/browse/recipes
+Router.post('/add', RecipeController.AddRecipe)
+//POST-> localhost:3000/home/recipes/add
 
-module.exports = router;
+Router.get('/all', RecipeController.AllRecipes)
+// GET-> localhost:3000/home/recipes/all
+
+Router.get('/search/:recipeName', RecipeController.FindRecipe)
+//GET-> localhost:3000/home/recipes/search/Pancakes
+
+
+Router.delete('/delete/:id', RecipeController.DeleteRecipe)
+//DELETE-> localhost:3000/home/recipes/delete/5fab5bcd55afbfc17f279e1d
+
+
+Router.put('/edit/:id', RecipeController.UpdateRecipe)
+//PUT-> localhost:3000/home/recipes/edit/
+
+
+module.exports = Router
