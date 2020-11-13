@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Home.css'
 import Nav from '../components/Nav'
+import FoodList from '../components/FoodList'
 
 export default () => {
   return (
@@ -15,11 +16,11 @@ export default () => {
         </div>
         <div className="homepage-right">
             <div className="link-container">
-                <div></div>
+                <div>
+                    <FoodList></FoodList>
+                </div>
             </div>
         </div>
     </div>
   )
 }
-
-
