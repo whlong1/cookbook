@@ -32,11 +32,22 @@
     background-color: #ffd200;
     width: 80px;
     height: 6px;
-
  }
 
- h3{
+ .navlinks{
     font-family: 'canada-type-gibson', sans-serif;
+
  }
 
+.signin-up  {
+   font-family: 'canada-type-gibson', sans-serif;
+   color: black;
+   font-size: 1.1rem;
+   font-weight: 500;
+   font-style: normal;
+}
 
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
