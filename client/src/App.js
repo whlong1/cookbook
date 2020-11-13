@@ -1,18 +1,8 @@
 import React from 'react'
-
-import {Route, Switch} from 'react-router-dom'
+import Router from './components/Router'
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <main>
-        <Switch>
-          <Route exact path="/" component={Home}/>
-        </Switch>
-      </main>
-    </div>
-  );
+  return <Router />
 }
 
-export default App;
+export default App
