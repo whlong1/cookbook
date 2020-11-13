@@ -7,6 +7,7 @@ export default () => {
         <div className="homepage-left">
             <div className="welcome-msg"><h1>Welcome to CookBook</h1></div>
             <div className="yellow-block"></div>
+            <div><h3>SIGN UP</h3></div>
         </div>
         <div className="homepage-right">
             <div className="link-container">

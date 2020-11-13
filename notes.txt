@@ -49,3 +49,12 @@ localhost:3000/home/cuisine/add
   },
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFkYjA1ZWEwNWUxNTE3MmFlZGNjNDQiLCJuYW1lIjoiSHVudGVyIiwiaWF0IjoxNjA1MjE4NDI5fQ.fQNva1rv1247jjLjfhpdKoGxVyBC0OXgKYxXlXS6h8s"
 }
+
+
+
+
+font-family: sybarite, serif;
+
+font-weight: 900;
+
+font-style: normal;

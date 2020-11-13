@@ -22,6 +22,7 @@
  .welcome-msg{
     display: flex;
     font-size: 1.75rem;
+    font-family: 'sybarite', serif;
  }
 
  .yellow-block{
@@ -31,6 +32,11 @@
     background-color: #ffd200;
     width: 80px;
     height: 8px;
+
+ }
+
+ h3{
+    font-family: 'canada-type-gibson', sans-serif;
 
  }
 
