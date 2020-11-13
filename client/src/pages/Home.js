@@ -9,7 +9,7 @@ export default () => {
             <div className="welcome-msg"><h1>Welcome to CookBook</h1></div>
             <div className="yellow-block"></div>
             <div>
-                <Nav className="navlinks"></Nav>
+                <Nav></Nav>
             </div>
 
         </div>

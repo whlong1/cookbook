@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Signup from '../pages/SignUp'
+import Signin from '../pages/SignIn'
 
 
 class Router extends Component {
@@ -33,6 +34,12 @@ class Router extends Component {
                         path="/signup"
                         component={(props) => (
                             <Signup {...props}></Signup>
+                        )}
+                    />
+                    <Route
+                        path="/signin"
+                        component={(props) => (
+                            <Signin {...props}></Signin>
                         )}
                     />
                 </Switch>
