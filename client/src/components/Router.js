@@ -3,7 +3,9 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Signup from '../pages/SignUp'
 import Signin from '../pages/SignIn'
+
 import RecipeList from './pages/RecipeList'
+import RecipeDetails from './pages/RecipeDetails'
 
 
 class Router extends Component {
@@ -44,7 +46,9 @@ class Router extends Component {
                         )}
                     />
 
-                    <Route path="/view/games/:cuisineId" component={RecipeList} />
+                    <Route path="/home/recipes/:cuisineId" component={RecipeList}/>
+
+                    <Route path="/home/recipes/:recipeId" component={RecipeDetails}/>
                     
 
                 </Switch>
@@ -57,3 +61,6 @@ class Router extends Component {
 export default Router
 
 // GET-> localhost:3000/home/recipes/all
+
+//line 47 should maybe return stuff from the cuisine list
+
