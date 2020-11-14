@@ -11,7 +11,7 @@ import Plate6 from '../assets/cake.png'
 export default () => {
   return (
     <div>
-        <div>
+        <div className="listcontainer">
             <img src={Plate1} alt="avocado toast"/>
             <img src={Plate2} alt="pancakes"/>
             <img src={Plate3} alt="pasta"/>

@@ -12,7 +12,6 @@ export default () => {
             <div>
                 <Nav></Nav>
             </div>
-
         </div>
         <div className="homepage-right">
             <div className="link-container">
@@ -24,3 +23,5 @@ export default () => {
     </div>
   )
 }
+
+

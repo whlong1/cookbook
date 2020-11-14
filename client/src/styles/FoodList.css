@@ -1,5 +1,14 @@
 img {
     background-color: transparent;
-    width: 12vw;
+    width: 11vw;
     margin: 4vw 4vh;
+}
+
+
+.listcontainer{
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin-left: 8vw;
+
 }
