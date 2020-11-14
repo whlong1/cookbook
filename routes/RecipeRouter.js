@@ -11,8 +11,11 @@ Router.get('/all', RecipeController.AllRecipes)
 Router.get('/search/:recipeName', RecipeController.FindRecipe)
 //GET-> localhost:3000/home/recipes/search/Pancakes
 
-Router.get('/find/:cuisineID', RecipeController.ListRecipesById)
+Router.get('/find/:cuisineId', RecipeController.ListRecipesById)
 //GET-> localhost:3000/home/recipes/find/5fad589718f1b9f74987a725
+
+Router.get('/sort/:cuisineStyle', RecipeController.ListRecipesByStyle)
+//GET-> localhost:3000/home/recipes/sort/Fast Food
 
 Router.delete('/delete/:id', RecipeController.DeleteRecipe)
 //DELETE-> localhost:3000/home/recipes/delete/5fab5bcd55afbfc17f279e1d

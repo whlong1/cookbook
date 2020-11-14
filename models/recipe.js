@@ -30,6 +30,10 @@ const Recipe = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'cuisine'
     },
+    style: {
+      type: String,
+      required: true
+    },
     reviews: [
       {
         type: Schema.Types.ObjectId,
