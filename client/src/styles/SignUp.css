@@ -18,28 +18,17 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 2em;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
-
 
 input {
     margin-top: 1vh;
     max-width: 380px;
 }
 
-
 button {
     max-width: 380px;
     margin-top: 1vh;
 }
   
-.photocont {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-image: url("/Users/williamlong/general-assembly/unit2/projects/cookbook/client/src/assets/background2.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-
-}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import TextInput from '../components/TextInput'
+import '../styles/SignUp.css'
 
 export default class SignIn extends Component {
   constructor() {
@@ -23,24 +24,27 @@ export default class SignIn extends Component {
   render() {
     const {email, password} = this.state
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextInput
-            placeholder="Email"
-            name="email"
-            type="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          <TextInput
-            placeholder="Password"
-            name="password"
-            value={password}
-            type="password"
-            onChange={this.handleChange}
-          />
-          <button type="submit">SIGN IN</button>
-        </form>
+      <div className="pageLayout">
+        <div className="container">
+          <form onSubmit={this.handleSubmit}>
+            <TextInput
+              placeholder="Email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+            <TextInput
+              placeholder="Password"
+              name="password"
+              value={password}
+              type="password"
+              onChange={this.handleChange}
+            />
+            <button type="submit">SIGN IN</button>
+          </form>
+        </div>
+        <div className="photocont"></div>
       </div>
     )
   }
