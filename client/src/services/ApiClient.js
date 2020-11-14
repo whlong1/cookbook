@@ -1,5 +1,5 @@
 import axios from 'axios'
-const ApiClient = axios.create({ baseURL: 'http://localhost:3001/api' })
+const ApiClient = axios.create({ baseURL: 'http://localhost:3000/api' })
 
 ApiClient.interceptors.request.use(
   async (config) => {
