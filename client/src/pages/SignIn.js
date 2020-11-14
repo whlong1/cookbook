@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import TextInput from '../components/TextInput'
+import {__LoginUser} from '../services/UserService'
 import '../styles/SignUp.css'
 
 export default class SignIn extends Component {
@@ -19,6 +20,12 @@ export default class SignIn extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     console.log(this.state)
+    try {
+      await __LoginUser(this.state)
+      this.props.history.push('/')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
@@ -49,3 +56,4 @@ export default class SignIn extends Component {
     )
   }
 }
+

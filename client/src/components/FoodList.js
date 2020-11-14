@@ -1,5 +1,7 @@
 import React from 'react'
 import '../styles/FoodList.css'
+import {Link} from 'react-router-dom'
+
 import Plate1 from '../assets/avocadotoast.png'
 import Plate2 from '../assets/pancakes.png'
 import Plate3 from '../assets/pasta.png'
@@ -12,7 +14,7 @@ export default () => {
   return (
     <div>
         <div className="listcontainer">
-            <img src={Plate1} alt="avocado toast"/>
+            <Link to="/home/recipes/sort/indian"><img src={Plate1} alt="avocado toast"/></Link>
             <img src={Plate2} alt="pancakes"/>
             <img src={Plate3} alt="pasta"/>
             <img src={Plate4} alt="curry"/>

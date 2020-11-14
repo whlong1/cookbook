@@ -3,9 +3,11 @@ import ApiClient from './ApiClient'
 //POST-> localhost:3000/home/recipes/add
 
 
-export const __GetListByStyle = async (cuisine) => {
+//EDITED
+
+export const __GetListByStyle = async (style) => {
     try {
-      const response = await ApiClient.get(`/recipes/sort/${cuisine}`)
+      const response = await ApiClient.get(`/recipes/sort/${style}`)
       return response.data
     } catch (error) {
       throw error

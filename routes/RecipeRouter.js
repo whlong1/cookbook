@@ -17,8 +17,11 @@ Router.get('/find/:cuisineId', RecipeController.ListRecipesById)
 Router.get('/get/:recipeId', RecipeController.GetRecipeById)
 //GET-> localhost:3000/home/recipes/get/5fad6fb2ec3f93ff91750438
 
-Router.get('/sort/:cuisineStyle', RecipeController.ListRecipesByStyle)
+Router.get('/sort/:style', RecipeController.ListRecipesByStyle)
 //GET-> localhost:3000/home/recipes/sort/Fast Food
+
+// Router.get('/sort/:cuisineStyle', RecipeController.ListRecipesByStyle)
+// //GET-> localhost:3000/home/recipes/sort/Fast Food
 
 Router.delete('/delete/:id', RecipeController.DeleteRecipe)
 //DELETE-> localhost:3000/home/recipes/delete/5fab5bcd55afbfc17f279e1d
@@ -28,3 +31,4 @@ Router.put('/edit/:id', RecipeController.UpdateRecipe)
 
 
 module.exports = Router
+

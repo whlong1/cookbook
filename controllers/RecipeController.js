@@ -56,13 +56,24 @@ const ListRecipesById = async (request, response) => {
 
 const ListRecipesByStyle = async (request, response) => {
     try{
-        const {cuisineStyle} = request.params
-        const list = await Recipe.find({style: {$eq: cuisineStyle}})
+        const {style} = request.params
+        const list = await Recipe.find({style: {$eq: style}})
         return response.status(200).json({list})
     } catch (error) {
         return response.status(500).send(error.message, 'Not Found')
     }
 }
+
+// const ListRecipesByStyle = async (request, response) => {
+//     try{
+//         const {cuisineStyle} = request.params
+//         const list = await Recipe.find({style: {$eq: cuisineStyle}})
+//         return response.status(200).json({list})
+//     } catch (error) {
+//         return response.status(500).send(error.message, 'Not Found')
+//     }
+// }
+
 
 const DeleteRecipe = async (request, response) => {
     try{
