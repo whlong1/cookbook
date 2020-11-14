@@ -31,6 +31,19 @@ const FindRecipe = async (request, response) => {
     }
 }
 
+
+const ListRecipesById = async (request, response) => {
+    try{
+        const {cuisineID} = request.params
+        const list = await Recipe.find({cuisine_id: {$eq: cuisineID}})
+        // const list = await Recipe.find({cuisine_id: "5fad589718f1b9f74987a725"})
+        return response.status(200).json({list})
+    } catch (error) {
+        return response.status(500).send(error.message, 'Not Found')
+    }
+}
+
+
 const DeleteRecipe = async (request, response) => {
     try{
         const {id} = request.params
@@ -66,6 +79,7 @@ module.exports = {
     AddRecipe,
     AllRecipes,
     FindRecipe,
+    ListRecipesById,
     DeleteRecipe,
     UpdateRecipe
 }
