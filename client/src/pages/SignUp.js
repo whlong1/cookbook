@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import TextInput from '../components/TextInput'
+import {__AddUser} from '../services/UserService'
 import '../styles/SignUp.css'
 
 export default class Signup extends Component {
@@ -12,14 +13,19 @@ export default class Signup extends Component {
     }
   }
 
-  handleChange = (event) => {
-    const {target} = event
+  handleChange = ({target}) => {
     this.setState({[target.name]: target.value})
+    console.log(this.state)
   }
 
   handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(this.state)
+    try {
+      await __AddUser(this.state)
+      this.props.history.push('/login')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {

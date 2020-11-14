@@ -8,9 +8,6 @@ const {
     getToken
   } = require('../middleware/JwtHandler')
 
-Router.post('/register', UserController.CreateUser)
-//POST-> localhost:3001/home/users/register
-
 Router.post('/add', UserController.AddUser)
 //POST-> localhost:3000/home/users/add
 

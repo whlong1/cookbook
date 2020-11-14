@@ -4,8 +4,8 @@ import Home from '../pages/Home'
 import Signup from '../pages/SignUp'
 import Signin from '../pages/SignIn'
 
-import RecipeList from './pages/RecipeList'
-import RecipeDetails from './pages/RecipeDetails'
+// import RecipeList from './pages/RecipeList'
+// import RecipeDetails from './pages/RecipeDetails'
 
 
 class Router extends Component {
@@ -46,9 +46,6 @@ class Router extends Component {
                         )}
                     />
 
-                    <Route path="/home/recipes/:cuisineId" component={RecipeList}/>
-
-                    <Route path="/home/recipes/:recipeId" component={RecipeDetails}/>
                     
 
                 </Switch>
@@ -64,3 +61,9 @@ export default Router
 
 //line 47 should maybe return stuff from the cuisine list
 
+
+
+
+// <Route path="/home/recipes/:cuisineId" component={RecipeList}/>
+
+// <Route path="/home/recipes/:recipeId" component={RecipeDetails}/>

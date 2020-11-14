@@ -18,6 +18,15 @@ export const __GetProfile = async (userId) => {
     }
   }
 
+  export const __CheckSession = async () => {
+    try {
+      const response = await ApiClient.get('/users/refresh/session')
+      return response.data
+    } catch (error) {
+      throw error
+    }
+  }
+
   export const __LoginUser = async (userData) => {
     try {
       const response = await ApiClient.post('/users/login', userData)
@@ -31,12 +40,10 @@ export const __GetProfile = async (userId) => {
 
 
 
+
 // Router.use('/users', UserRouter)
 
 //my user routes
-
-// Router.post('/register', UserController.CreateUser)
-// //POST-> localhost:3001/home/users/register
 
 // Router.post('/add', UserController.AddUser)
 // //POST-> localhost:3000/home/users/add

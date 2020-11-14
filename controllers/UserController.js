@@ -6,8 +6,8 @@ const {
 
 
 //=========
-
-const CreateUser = async (request, response) => {
+//create a user
+const AddUser = async (request, response) => {
     try {
         const body = request.body
         const password_digest = await generatePassword(body.password)
@@ -54,17 +54,18 @@ const SignInUser = async (request, response, next) => {
   }
 //=========
 
-const AddUser = async (request, response) => {
-    try {
-        const user = await new User(request.body)
-        await user.save()
-        return response.status(201).json({
-            user,
-        });
-    } catch (error) {
-        return response.status(500).json({ error: error.message })
-    }
-}
+// const AddUser = async (request, response) => {
+//     try {
+//         const user = await new User(request.body)
+//         await user.save()
+//         return response.status(201).json({
+//             user,
+//         });
+//     } catch (error) {
+//         return response.status(500).json({ error: error.message })
+//     }
+// }
+
 
 const GetUser = async (request, response) => {
     try {
@@ -114,7 +115,6 @@ const UpdateUser = async (request, response) => {
 
 
 module.exports = {
-    CreateUser,
     SignInUser,
     RefreshSession,
     AddUser,
