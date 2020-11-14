@@ -31,6 +31,19 @@ const FindRecipe = async (request, response) => {
     }
 }
 
+const GetRecipeById = async (request, response) => {
+    try{
+        const {recipeId} = request.params
+        const recipe = await Recipe.findById(recipeId)
+        if (recipe) {
+            return response.status(200).json({recipe})
+        }
+        return response.status(404).send('Cannot find a recipe with that id');
+    } catch (error) {
+        return response.status(500).send(error.message, 'Error')
+    }
+}
+
 const ListRecipesById = async (request, response) => {
     try{
         const {cuisineId} = request.params
@@ -89,5 +102,6 @@ module.exports = {
     ListRecipesById,
     ListRecipesByStyle,
     DeleteRecipe,
-    UpdateRecipe
+    UpdateRecipe,
+    GetRecipeById
 }
