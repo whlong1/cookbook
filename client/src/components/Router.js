@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Signup from '../pages/SignUp'
 import Signin from '../pages/SignIn'
+import RecipeList from './pages/RecipeList'
 
 
 class Router extends Component {
@@ -42,6 +43,10 @@ class Router extends Component {
                             <Signin {...props}></Signin>
                         )}
                     />
+
+                    <Route path="/view/games/:cuisineId" component={RecipeList} />
+                    
+
                 </Switch>
             )}
             </main>
@@ -50,3 +55,5 @@ class Router extends Component {
 }
 
 export default Router
+
+// GET-> localhost:3000/home/recipes/all
