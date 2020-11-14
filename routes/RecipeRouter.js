@@ -14,11 +14,8 @@ Router.get('/search/:recipeName', RecipeController.FindRecipe)
 Router.get('/find/:cuisineId', RecipeController.ListRecipesById)
 //GET-> localhost:3000/home/recipes/find/5fad589718f1b9f74987a725
 
-
-
 Router.get('/get/:recipeId', RecipeController.GetRecipeById)
 //GET-> localhost:3000/home/recipes/get/5fad6fb2ec3f93ff91750438
-
 
 Router.get('/sort/:cuisineStyle', RecipeController.ListRecipesByStyle)
 //GET-> localhost:3000/home/recipes/sort/Fast Food

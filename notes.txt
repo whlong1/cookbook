@@ -58,3 +58,31 @@ font-family: sybarite, serif;
 font-weight: 900;
 
 font-style: normal;
+
+
+
+
+UPLOAD A RECIPE
+
+*** mern post controller ***
+
+const CreatePost = async (req, res) => {
+  try {
+    const newPost = new TravelLog({ ...req.body, user_id: req.params.user_id })
+    newPost.save()
+    res.send(newPost)
+  } catch (error) {
+    throw error
+  }
+}
+
+*** mern post services ***
+
+export const __UploadPost = async (formData, userId) => {
+  try {
+    const res = await ApiClient.post(`/posts/${userId}/?active=true`, formData)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
