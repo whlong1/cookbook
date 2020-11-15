@@ -6,3 +6,6 @@ function App() {
 }
 
 export default App
+
+
+//IMPORTANT NOTE may want to wrap router in a div

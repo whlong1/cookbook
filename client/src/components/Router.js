@@ -49,10 +49,6 @@ verifyTokenValid = async () => {
 
     
 
-
-
-
-
     render() {
         return (
             <main>
@@ -78,7 +74,7 @@ verifyTokenValid = async () => {
                             <Signin {...props}></Signin>
                         )}
                     />
-                    <Route path="/home/recipes/sort/:cuisineStyle" component={RecipeList}/>
+                    <Route path="/home/recipes/sort/:style" component={RecipeList}/>
                     <Route path="/home/recipes/:recipeId" component={RecipeDetails}/>
 
                     
