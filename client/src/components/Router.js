@@ -8,6 +8,7 @@ import {__CheckSession} from '../services/UserService'
 
 import RecipeList from '../pages/RecipeList'
 import RecipeDetails from '../pages/RecipeDetails'
+import AddRecipe from '../pages/AddRecipe'
 
 
 class Router extends Component {
@@ -85,7 +86,14 @@ verifyTokenValid = async () => {
                       component={(props) => (
                         <RecipeDetails {...props}/>
                       )}
-                    />                    
+                    />
+                    <Route 
+                      path="/home/recipes/add" 
+                      component={(props) => (
+                        <AddRecipe {...props}/>
+                      )}
+                    />
+                                        
                 </Switch>
             )}
             </main>
@@ -93,5 +101,8 @@ verifyTokenValid = async () => {
   }
 }
 export default Router
+
+
+//localhost:3001/home/recipes/add
 
 

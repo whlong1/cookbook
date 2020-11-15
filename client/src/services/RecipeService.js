@@ -2,6 +2,17 @@ import ApiClient from './ApiClient'
 
 //POST-> localhost:3000/home/recipes/add
 
+//HEY MAN LOOK AT (FORM DATA), AFTER AUTH, ADD USERID
+export const __AddRecipe = async (formData) => {
+  try {
+    // const response = await ApiClient.post(`/recipes/add/${userId}/?active=true`, formData)
+    const response = await ApiClient.post(`/recipes/add`, formData)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
 
 export const __GetListByStyle = async (style) => {
     try {
@@ -17,7 +28,7 @@ export const __GetListByStyle = async (style) => {
 
 export const __GetRecipe = async (recipeid) => {
   try {
-    const response = await ApiClient.get(`recipes/get/${recipeid}`)
+    const response = await ApiClient.get(`/recipes/get/${recipeid}`)
     return response.data
   } catch (error) {
     throw error

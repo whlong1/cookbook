@@ -9,6 +9,7 @@ export default ({className}) => {
       <nav>
         <NavLink activeClassName="nav" to="/signup"><p className="signup">SIGN UP</p></NavLink>
         <NavLink activeClassName="nav" to="/login"><p className="login">SIGN IN</p></NavLink>
+        <NavLink activeClassName="nav" to="/home/recipes/add"><p className="add">ADD RECIPE</p></NavLink>
       </nav>
     </header>
   )

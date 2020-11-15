@@ -9,18 +9,18 @@ const Recipe = new Schema(
     },
     author: {
       type: String,
-      required: true
+      // required: true
     },
     prep_time: {
         type: String,
-        required: true
+        // required: true
       },
     description: {
       type: String
     },
     image: {
       type: String,
-      required: true
+      // required: true
     },
     user_id: {
         type: Schema.Types.ObjectId,
@@ -32,7 +32,7 @@ const Recipe = new Schema(
     },
     style: {
       type: String,
-      required: true
+      // required: true
     },
     reviews: [
       {

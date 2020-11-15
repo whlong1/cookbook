@@ -7,15 +7,12 @@ export default class RecipeDetails extends Component {
   constructor() {
     super()
     this.state = {
-      // recipeId: props.match.params.recipeId,
-      // recipeDetails: {}
       recipe: {}
     }
   }
 
   componentDidMount() {
     this.getRecipeDetails()
-
   }
 
   getRecipeDetails = async () => {
@@ -63,3 +60,4 @@ export default class RecipeDetails extends Component {
 //     throw error
 //   }
 // }
+

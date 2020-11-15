@@ -13,9 +13,9 @@ export default class RecipeList extends Component {
     console.log(this.state)
   }
 
-  componentDidMount() {
-    this.getRecipesByStyle()
-  }
+componentDidMount() {
+  this.getRecipesByStyle()
+}
 
 getRecipesByStyle = async () => {
   try {
