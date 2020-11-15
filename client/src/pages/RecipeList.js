@@ -10,7 +10,6 @@ export default class RecipeList extends Component {
     this.state = {
       recipes: [],
     }
-    // console.log(props.match.params)
     console.log(this.state)
   }
 
