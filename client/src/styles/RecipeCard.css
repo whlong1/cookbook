@@ -1,5 +1,8 @@
 .recipe-card{
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+    margin: 15px;
 }

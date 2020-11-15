@@ -31,10 +31,12 @@ const FindRecipe = async (request, response) => {
     }
 }
 
+//========
+
 const GetRecipeById = async (request, response) => {
     try{
-        const {recipeId} = request.params
-        const recipe = await Recipe.findById(recipeId)
+        const {recipe_id} = request.params
+        const recipe = await Recipe.findById(recipe_id)
         if (recipe) {
             return response.status(200).json({recipe})
         }
@@ -44,15 +46,7 @@ const GetRecipeById = async (request, response) => {
     }
 }
 
-const ListRecipesById = async (request, response) => {
-    try{
-        const {cuisineId} = request.params
-        const list = await Recipe.find({cuisine_id: {$eq: cuisineId}})
-        return response.status(200).json({list})
-    } catch (error) {
-        return response.status(500).send(error.message, 'Not Found')
-    }
-}
+//========
 
 const ListRecipesByStyle = async (request, response) => {
     try{
@@ -63,17 +57,6 @@ const ListRecipesByStyle = async (request, response) => {
         return response.status(500).send(error.message, 'Not Found')
     }
 }
-
-// const ListRecipesByStyle = async (request, response) => {
-//     try{
-//         const {cuisineStyle} = request.params
-//         const list = await Recipe.find({style: {$eq: cuisineStyle}})
-//         return response.status(200).json({list})
-//     } catch (error) {
-//         return response.status(500).send(error.message, 'Not Found')
-//     }
-// }
-
 
 const DeleteRecipe = async (request, response) => {
     try{
@@ -110,7 +93,6 @@ module.exports = {
     AddRecipe,
     AllRecipes,
     FindRecipe,
-    ListRecipesById,
     ListRecipesByStyle,
     DeleteRecipe,
     UpdateRecipe,

@@ -79,19 +79,13 @@ verifyTokenValid = async () => {
                       component={(props) => (
                         <RecipeList {...props}/>
                       )}
-                      // component={RecipeList}
-                      
-                      
-                      
-                      />
-
-
-
-
-                    <Route path="/home/recipes/:recipeId" component={RecipeDetails}/>
-
-                    
-
+                    />
+                    <Route 
+                      path="/home/recipes/get/:recipe_id" 
+                      component={(props) => (
+                        <RecipeDetails {...props}/>
+                      )}
+                    />                    
                 </Switch>
             )}
             </main>
@@ -101,16 +95,3 @@ verifyTokenValid = async () => {
 export default Router
 
 
-// Router.get('/sort/:cuisineStyle', RecipeController.ListRecipesByStyle)
-//GET-> localhost:3000/home/recipes/sort/Fast Food
-
-// GET-> localhost:3000/home/recipes/all
-
-//line 47 should maybe return stuff from the cuisine list
-
-
-
-
-// <Route path="/home/recipes/:cuisineId" component={RecipeList}/>
-
-// <Route path="/home/recipes/:recipeId" component={RecipeDetails}/>

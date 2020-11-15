@@ -19,8 +19,8 @@ export default class RecipeList extends Component {
 
 getRecipesByStyle = async () => {
   try {
-    const recipes = await __GetListByStyle(this.props.match.params.style)
-    this.setState({recipes: recipes.list})
+    const data = await __GetListByStyle(this.props.match.params.style)
+    this.setState({recipes: data.list})
     console.log(this.state)
   } catch (error) {
     console.log(error)
@@ -28,15 +28,17 @@ getRecipesByStyle = async () => {
 }
 
 
+
 render() {
   const {recipes} = this.state
-  console.log(typeof(recipes))
-  console.log(recipes[0])
+  // console.log(typeof(recipes))
+  // console.log(recipes[0])
   return (
     <div>
       {recipes.map((recipe) => (
         <RecipeCard
           key={recipe._id}
+          onClick={() => this.props.history.push(`/home/recipes/get/${recipe._id}`)}
           title={recipe.title}
         />
       ))}
@@ -45,3 +47,4 @@ render() {
 }
 }
 
+// http://localhost:3000/home/recipes/get/5fb007ef7135f341060cb0a8
