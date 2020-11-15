@@ -8,6 +8,7 @@ import ApiClient from './ApiClient'
 export const __GetListByStyle = async (style) => {
     try {
       const response = await ApiClient.get(`/recipes/sort/${style}`)
+      console.log(response.data)
       return response.data
     } catch (error) {
       throw error

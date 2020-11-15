@@ -16,11 +16,23 @@ export default class RecipeDetails extends Component {
 
   getRecipeDetails = async () => {
     const response = await Axios.get(
+      //=====
       `${this.state.recipeId}`
+      //=====
     )
     this.setState({recipeDetails: response.data})
     // console.log(res.data)
   }
+
+  // export const __GetRecipe = async (recipeid) => {
+  //   try {
+  //     const response = await ApiClient.get(`recipes/get/${recipeid}`)
+  //     return response.data
+  //   } catch (error) {
+  //     throw error
+  //   }
+  // }
+  //GET-> localhost:3000/home/recipes/get/5fad6fb2ec3f93ff91750438
 
 
   render() {
@@ -29,7 +41,7 @@ export default class RecipeDetails extends Component {
       <div>
         <section>
           <div>
-            <img src={recipeDetails.image} />
+            <img src={recipeDetails.image} alt="an example of the current recipe"/>
           </div>
         </section>
 
