@@ -3,7 +3,7 @@ const Recipe = require('../models/recipe');
 const AddRecipe = async (request, response) => {
     try {
         const recipe = await new Recipe(request.body)
-        await recipe.save()
+        recipe.save()
         return response.status(201).json({
             recipe,
         });

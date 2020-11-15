@@ -9,11 +9,11 @@ const Recipe = new Schema(
     },
     author: {
       type: String,
-      // required: true
+      required: true
     },
     prep_time: {
         type: String,
-        // required: true
+        required: true
       },
     description: {
       type: String
@@ -32,7 +32,7 @@ const Recipe = new Schema(
     },
     style: {
       type: String,
-      // required: true
+      required: true
     },
     reviews: [
       {

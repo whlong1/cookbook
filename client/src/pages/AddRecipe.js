@@ -7,7 +7,12 @@ export default class AddRecipe extends Component {
     constructor() {
       super()
       this.state = {
-        title: ''
+        title: '',
+        author: '',
+        prep_time: '',
+        description: '',
+        image: '',
+        style: ''
       }
     }
   
@@ -26,16 +31,47 @@ export default class AddRecipe extends Component {
       }
   
     render() {
-      const {title} = this.state
+      const {title, author, prep_time, description, image, style} = this.state
       console.log(this.state)
       return (
         <div>
             <div><h1>HELLO</h1></div>
           <form onSubmit={this.handleSubmit}>
             <TextInput
-              placeholder="Title"
+              placeholder="title"
               name="title"
               value={title}
+              onChange={this.handleChange}
+            />
+            <TextInput
+              placeholder="author"
+              name="author"
+              value={author}
+              onChange={this.handleChange}
+            />
+            <TextInput
+              placeholder="prep_time"
+              name="prep_time"
+              value={prep_time}
+              onChange={this.handleChange}
+            />
+            <TextInput
+              fieldType="textfield"
+              placeholder="description"
+              name="description"
+              value={description}
+              onChange={this.handleChange}
+            />
+            <TextInput
+              placeholder="image"
+              name="image"
+              value={image}
+              onChange={this.handleChange}
+            />
+            <TextInput
+              placeholder="style"
+              name="style"
+              value={style}
               onChange={this.handleChange}
             />
             <button type="submit">POST RECIPE</button>
