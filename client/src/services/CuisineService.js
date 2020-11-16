@@ -18,6 +18,7 @@ export const __GetCuisine = async (cuisineid) => {
 export const __GetAllCuisine = async () => {
   try {
     const response = await ApiClient.get(`/cuisine/all`)
+    console.log('SERVICE', response.data)
     return response.data
   } catch (error) {
     throw error

@@ -10,6 +10,7 @@ import RecipeList from '../pages/RecipeList'
 import RecipeDetails from '../pages/RecipeDetails'
 import AddRecipe from '../pages/AddRecipe'
 import EditRecipe from '../pages/EditRecipe'
+import AllCuisine from '../pages/AllCuisine'
 
 
 class Router extends Component {
@@ -99,6 +100,13 @@ verifyTokenValid = async () => {
                       
                       component={(props) => (
                         <EditRecipe {...props}/>
+                      )}
+                    />
+                    <Route 
+                      path="/home/cuisine/all"
+                      
+                      component={(props) => (
+                        <AllCuisine {...props}/>
                       )}
                     />
                                         
