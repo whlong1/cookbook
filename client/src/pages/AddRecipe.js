@@ -23,8 +23,15 @@ export default class AddRecipe extends Component {
     handleSubmit = async (event) => {
         event.preventDefault()
         try {
-          await __AddRecipe(this.state)
-        //   this.props.history.push('/')
+          // await __AddRecipe(this.state)
+          console.log(this.state)
+          let stored = await __AddRecipe(this.state)
+          console.log('LOOK SUCCESS', stored)
+      
+          this.props.history.push(`/home/recipes/get/${stored.recipe._id}`)
+          
+
+
         } catch (error) {
           console.log(error)
         }

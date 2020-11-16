@@ -7,6 +7,7 @@ export const __AddRecipe = async (formData) => {
   try {
     // const response = await ApiClient.post(`/recipes/add/${userId}/?active=true`, formData)
     const response = await ApiClient.post(`/recipes/add`, formData)
+    console.log('RESPONSE', response.data)
     return response.data
   } catch (error) {
     throw error
