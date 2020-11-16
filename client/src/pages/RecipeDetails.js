@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {__GetRecipe} from '../services/RecipeService'
+import {__DeleteRecipe} from '../services/RecipeService'
 import '../styles/RecipeDetails.css'
+
 
 
 export default class RecipeDetails extends Component {
@@ -23,21 +25,36 @@ export default class RecipeDetails extends Component {
 
 
 
+  delete = async (recipeId) => {
+    try {
+      // const keepers = this.state.recipes.filter((recipe) => recipe._id !== id)
+      // this.setState({recipes: keepers}
+      console.log('THE FIRST ONE', recipeId)
+      await __DeleteRecipe(recipeId)
+      console.log('THE SECOND ONE',recipeId)
+
+      this.props.history.push(`/`)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   render() {
     const {recipe} = this.state
     return (
+      
       <div>
+        <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
         <div><h1>HELLO</h1></div>
         <section>
           <div>
             {/* <img src={recipe.image} alt="an example of the current recipe"/> */}
           </div>
         </section>
-
         <section>
           <div>
             <h2>{recipe.title}</h2>
-
           </div>
         </section>
 
@@ -46,18 +63,4 @@ export default class RecipeDetails extends Component {
   }
 }
 
-
-//BACK END ROUTE
-// Router.get('/get/:recipe_id', RecipeController.GetRecipeById)
-// //GET-> localhost:3001/home/recipes/get/5fb007ef7135f341060cb0a8
-
-//SERVICES
-// export const __GetRecipe = async (recipeid) => {
-//   try {
-//     const response = await ApiClient.get(`recipes/get/${recipeid}`)
-//     return response.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
 

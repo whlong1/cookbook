@@ -26,12 +26,10 @@ export default class AddRecipe extends Component {
           // await __AddRecipe(this.state)
           console.log(this.state)
           let stored = await __AddRecipe(this.state)
-          console.log('LOOK SUCCESS', stored)
+          console.log('IT WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', stored)
       
           this.props.history.push(`/home/recipes/get/${stored.recipe._id}`)
-          
-
-
+        
         } catch (error) {
           console.log(error)
         }

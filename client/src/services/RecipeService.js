@@ -26,7 +26,6 @@ export const __GetListByStyle = async (style) => {
   }
 
 
-
 export const __GetRecipe = async (recipeid) => {
   try {
     const response = await ApiClient.get(`/recipes/get/${recipeid}`)
@@ -48,9 +47,10 @@ export const __UpdateRecipe = async (formData, recipeid) => {
 }
 
 
-export const __DeletePost = async (recipeid) => {
+export const __DeleteRecipe = async (recipeid) => {
   try {
-    const response = await ApiClient.delete(`/recipes/delete/${recipeid}?active=true`)
+    // const response = await ApiClient.delete(`/recipes/delete/${recipeid}?active=true`)
+    const response = await ApiClient.delete(`/recipes/delete/${recipeid}`)
     return response
   } catch (error) {
     throw error
