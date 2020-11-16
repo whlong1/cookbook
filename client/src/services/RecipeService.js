@@ -3,7 +3,6 @@ import ApiClient from './ApiClient'
 //HEY MAN LOOK AT (FORM DATA), AFTER AUTH, ADD USERID
 export const __AddRecipe = async (formData) => {
   try {
-    // const response = await ApiClient.post(`/recipes/add/${userId}/?active=true`, formData)
     const response = await ApiClient.post(`/recipes/add`, formData)
     console.log('RESPONSE', response.data)
     return response.data
@@ -44,7 +43,6 @@ export const __UpdateRecipe = async (formData, recipeid) => {
 
 export const __DeleteRecipe = async (recipeid) => {
   try {
-    // const response = await ApiClient.delete(`/recipes/delete/${recipeid}?active=true`)
     const response = await ApiClient.delete(`/recipes/delete/${recipeid}`)
     return response
   } catch (error) {
