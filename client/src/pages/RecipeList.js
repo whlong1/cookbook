@@ -32,8 +32,6 @@ getRecipesByStyle = async () => {
 
 render() {
   const {recipes} = this.state
-  // console.log(typeof(recipes))
-  // console.log(recipes[0])
   return (
     <div>
       {recipes.map((recipe) => (
@@ -41,6 +39,8 @@ render() {
           key={recipe._id}
           onClick={() => this.props.history.push(`/home/recipes/get/${recipe._id}`)}
           title={recipe.title}
+          author={recipe.author}
+          image={recipe.image}
         />
       ))}
     </div>
@@ -48,4 +48,4 @@ render() {
 }
 }
 
-// http://localhost:3000/home/recipes/get/5fb007ef7135f341060cb0a8
+

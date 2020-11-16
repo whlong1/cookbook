@@ -14,7 +14,7 @@ export default () => {
   return (
     <div>
         <div className="listcontainer">
-            <Link to="/home/recipes/sort/indian"><img src={Plate1} alt="avocado toast"/></Link>
+            <Link to="/home/recipes/sort/healthy"><img src={Plate1} alt="avocado toast"/></Link>
             <img src={Plate2} alt="pancakes"/>
             <img src={Plate3} alt="pasta"/>
             <img src={Plate4} alt="curry"/>
