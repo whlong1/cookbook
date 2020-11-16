@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
 import TextInput from '../components/TextInput'
 import '../styles/AddRecipe.css'
-import {__AddRecipe} from '../services/RecipeService'
+import {__GetRecipe, __UpdateRecipe} from '../services/RecipeService'
 
-export default class AddRecipe extends Component {
+
+
+export default class EditRecipe extends Component {
     constructor() {
       super()
       this.state = {
@@ -15,33 +17,55 @@ export default class AddRecipe extends Component {
         style: ''
       }
     }
+
+    componentDidMount() {
+        this.getRecipe()
+    }
   
+    getRecipe = async () => {
+        try {
+            const data = await __GetRecipe(this.props.match.params.recipe_id)
+            // this.setState({recipe: data.recipe})
+            this.setState({
+                title: data.recipe.title,
+                author: data.recipe.author,
+                prep_time: data.recipe.prep_time,
+                description: data.recipe.description,
+                image: data.recipe.image,
+                style: data.recipe.style
+            })
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     handleChange = ({target}) => {
       this.setState({[target.name]: target.value})
     }
   
+
     handleSubmit = async (event) => {
         event.preventDefault()
         try {
-          // await __AddRecipe(this.state)
-          console.log(this.state)
-          let stored = await __AddRecipe(this.state)
-          console.log('IT WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', stored)
-      
-          this.props.history.push(`/home/recipes/get/${stored.recipe._id}`)
-        
+          await __UpdateRecipe(this.state, this.props.match.params.recipe_id)
+          //
+          let backwards = this.props.match.params.recipe_id
+          this.props.history.push(`/home/recipes/get/${backwards}`)
+          //
         } catch (error) {
           console.log(error)
         }
-      }
-      
+    }
+
   
     render() {
       const {title, author, prep_time, description, image, style} = this.state
       console.log(this.state)
       return (
         <div>
-            <div><h1>HELLO</h1></div>
+            <div><h1>EDIT A RECIPE</h1></div>
           <form onSubmit={this.handleSubmit}>
             <TextInput
               placeholder="title"
@@ -80,7 +104,7 @@ export default class AddRecipe extends Component {
               value={style}
               onChange={this.handleChange}
             />
-            <button type="submit">POST RECIPE</button>
+            <button type="submit">UPDATE RECIPE DETAILS</button>
           </form>
         </div>
       )

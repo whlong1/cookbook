@@ -17,6 +17,7 @@ componentDidMount() {
   this.getRecipesByStyle()
 }
 
+
 getRecipesByStyle = async () => {
   try {
     const data = await __GetListByStyle(this.props.match.params.style)

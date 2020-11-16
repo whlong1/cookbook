@@ -24,7 +24,6 @@ export default class RecipeDetails extends Component {
   }
 
 
-
   delete = async (recipeId) => {
     try {
       // const keepers = this.state.recipes.filter((recipe) => recipe._id !== id)
@@ -45,7 +44,10 @@ export default class RecipeDetails extends Component {
     return (
       
       <div>
+
         <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
+        <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button>
+
         <div><h1>HELLO</h1></div>
         <section>
           <div>
@@ -62,5 +64,4 @@ export default class RecipeDetails extends Component {
     )
   }
 }
-
 
