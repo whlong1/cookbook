@@ -12,6 +12,23 @@ const AddCuisine = async (request, response) => {
     }
 }
 
+
+
+const GetCuisineById = async (request, response) => {
+    try{
+        const {cuisine_id} = request.params
+        const cuisine = await Cuisine.findById(cuisine_id)
+        if (cuisine) {
+            return response.status(200).json({cuisine})
+        }
+        return response.status(404).send('Cannot find a cuisine with that id');
+    } catch (error) {
+        return response.status(500).send(error.message, 'Error')
+    }
+}
+
+
+
 const FindCuisine = async (request, response) => {
     try{
         const {cuisineName} = request.params
@@ -64,6 +81,7 @@ const UpdateCuisine = async (request, response) => {
 
 module.exports = {
     AddCuisine,
+    GetCuisineById,
     FindCuisine,
     AllCuisine,
     DeleteCuisine,

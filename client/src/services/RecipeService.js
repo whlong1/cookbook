@@ -1,6 +1,6 @@
 import ApiClient from './ApiClient'
 
-//HEY MAN LOOK AT (FORM DATA), AFTER AUTH, ADD USERID
+//LOOK AT (FORM DATA), AFTER AUTH, ADD USERID
 export const __AddRecipe = async (formData) => {
   try {
     const response = await ApiClient.post(`/recipes/add`, formData)
