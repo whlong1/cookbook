@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/Home.css'
 import Nav from '../components/Nav'
-import UserCard from '../components/UserCard'
 import FoodList from '../components/FoodList'
 
 export default (props) => {

@@ -7,10 +7,6 @@ const Review = new Schema(
       type: String,
       required: true
     },
-    // user_id: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'users'
-    // },
     recipe_id: {
         type: Schema.Types.ObjectId,
         ref: 'recipes'

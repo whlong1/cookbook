@@ -2,6 +2,15 @@ import React, {Component} from 'react'
 import {__GetRecipe} from '../services/RecipeService'
 import {__DeleteRecipe} from '../services/RecipeService'
 import '../styles/RecipeDetails.css'
+import TextInput from '../components/TextInput'
+
+//Component
+import AddReview from '../components/AddReview'
+
+//New Page
+
+
+
 
 
 
@@ -10,6 +19,7 @@ export default class RecipeDetails extends Component {
     super()
     this.state = {
       recipe: {}
+      //empty review form?
     }
   }
 
@@ -65,6 +75,19 @@ export default class RecipeDetails extends Component {
             <p>Preparation Time: {recipe.prep_time}</p>
             <p>Description: {recipe.description}</p>
           </div>
+          <div className="reviews">
+            <div><h3>Reviews</h3></div>
+            <div>REVIEW PLACEHOLDER</div>
+
+            {/* <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>ADD REVIEW</button> */}
+
+            <div>
+              <AddReview>
+              </AddReview>
+            </div>
+            
+
+          </div>
         </section>
 
       </div>
@@ -72,3 +95,18 @@ export default class RecipeDetails extends Component {
   }
 }
 
+
+{/* <div className="review-container">
+{review.comments.length ? (
+  recipe.review.map((review) => (
+    <li className="review-list" key={review._id}>
+      <p>
+        <Link>{review.user_id.name}</Link>
+      </p>
+      <p>{review.review}</p>
+    </li>
+  ))
+) : (
+  <h3>No Comments</h3>
+)}
+</div> */}
