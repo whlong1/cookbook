@@ -27,11 +27,3 @@ export const __GetAllCuisine = async () => {
 
 
 
-//Notes
-
-// Router.get('/get/:cuisine_id', CuisineController.GetCuisineById)
-// //GET-> localhost:3001/home/cuisine/get/5fad589718f1b9f74987a725
-
-
-// Router.get('/all', CuisineController.AllCuisine)
-// // GET-> localhost:3001/home/cuisine/all

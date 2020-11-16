@@ -17,7 +17,9 @@ class Router extends Component {
     constructor() {
       super()
       this.state = {
-        pageLoading: true
+        pageLoading: true,
+        authenticated: false
+
       }
     }
 
@@ -37,7 +39,7 @@ verifyTokenValid = async () => {
             currentUser: session.user,
             authenticated: true
           },
-          () => this.props.history.push('/profile')
+          () => this.props.history.push('/')
         )
       } catch (error) {
         this.setState({ currentUser: null, authenticated: false })
@@ -46,8 +48,8 @@ verifyTokenValid = async () => {
     }
   }
 
-  toggleAuthenticated = (value, user, done) => {
-    this.setState({authenticated: value, currentUser: user}, () => done())
+  toggleAuthenticated = (value) => {
+    this.setState({authenticated: true})
   }
 
     
@@ -61,8 +63,11 @@ verifyTokenValid = async () => {
                 <Switch>
                     <Route
                         exact path="/"
-                        component={() => (
-                            <Home></Home>
+                        component={(props) => (
+                            <Home {...props}
+                            authenticated = {this.state.authenticated}
+                            >
+                            </Home>
                         )}
                     />
                     <Route
@@ -74,7 +79,9 @@ verifyTokenValid = async () => {
                     <Route
                         path="/login"
                         component={(props) => (
-                            <Signin {...props}></Signin>
+                            <Signin {...props}
+                            toggleAuthenticated = {this.toggleAuthenticated}
+                            ></Signin>
                         )}
                     />
                     <Route 
