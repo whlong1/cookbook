@@ -42,6 +42,8 @@ export default class RecipeDetails extends Component {
     return (
       
       <div>
+        
+        <button onClick={() => this.props.history.push(`/`)}>HOME</button>
 
         <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
         <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button>
