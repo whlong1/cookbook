@@ -24,14 +24,16 @@ export default class EditRecipe extends Component {
     getRecipe = async () => {
         try {
             const data = await __GetRecipe(this.props.match.params.recipe_id)
+            console.log(this.props)
+            console.log('DATA', data)
             // this.setState({recipe: data.recipe})
             this.setState({
-                title: data.recipe.title,
-                author: data.recipe.author,
-                prep_time: data.recipe.prep_time,
-                description: data.recipe.description,
-                image: data.recipe.image,
-                style: data.recipe.style
+                title: data.title,
+                author: data.author,
+                prep_time: data.prep_time,
+                description: data.description,
+                image: data.image,
+                style: data.style
             })
             console.log(data)
         } catch (error) {

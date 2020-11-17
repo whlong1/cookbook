@@ -10,7 +10,7 @@ export default class RecipeList extends Component {
     this.state = {
       recipes: [],
     }
-    console.log(this.state)
+    
   }
 
 componentDidMount() {
@@ -21,7 +21,6 @@ getRecipesByStyle = async () => {
   try {
     const data = await __GetListByStyle(this.props.match.params.style)
     this.setState({recipes: data.list})
-    console.log(this.state)
   } catch (error) {
     console.log(error)
   }
