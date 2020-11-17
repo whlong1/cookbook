@@ -9,7 +9,7 @@ export default (props) => {
     <div className="homepage">
         <div className="homepage-left">
 
-            <div className="welcome-msg"><h1>Welcome to CookBook</h1></div>
+            <div className="welcome"><h1>Welcome to CookBook</h1></div>
             <div className="yellow-block"></div>
 
             <div>
@@ -28,6 +28,7 @@ export default (props) => {
     </div>
   )
 }
+
 
 
 

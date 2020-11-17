@@ -14,12 +14,12 @@ export default () => {
   return (
     <div>
         <div className="listcontainer">
-            <Link to="/home/recipes/sort/healthy"><img src={Plate1} alt="avocado toast"/></Link>
-            <img src={Plate2} alt="pancakes"/>
-            <img src={Plate3} alt="pasta"/>
-            <img src={Plate4} alt="curry"/>
-            <img src={Plate5} alt="salad"/>
-            <img src={Plate6} alt="cake"/>
+            <Link to="/home/recipes/sort/healthy"><img className="plate" src={Plate1} alt="avocado toast"/></Link>
+            <img className="plate" src={Plate2} alt="pancakes"/>
+            <img className="plate" src={Plate3} alt="pasta"/>
+            <img className="plate" src={Plate4} alt="curry"/>
+            <img className="plate" src={Plate5} alt="salad"/>
+            <img className="plate" src={Plate6} alt="cake"/>
         </div>
     </div>
   )

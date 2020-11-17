@@ -1,4 +1,4 @@
-img {
+.plate {
     background-color: transparent;
     width: 11vw;
     margin: 4vw 4vh;
@@ -7,7 +7,7 @@ img {
 
 .listcontainer{
     width: 80%;
-    height: 80%;
+    max-height: 600px;
     display: block;
     margin-left: 8vw;
 
