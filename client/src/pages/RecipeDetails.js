@@ -3,11 +3,8 @@ import {__GetRecipe} from '../services/RecipeService'
 import {__DeleteRecipe} from '../services/RecipeService'
 import '../styles/RecipeDetails.css'
 import TextInput from '../components/TextInput'
+import ReviewCard from '../components/ReviewCard'
 
-//Component
-import AddReview from '../components/AddReview'
-
-//New Page
 
 
 
@@ -18,7 +15,9 @@ export default class RecipeDetails extends Component {
   constructor() {
     super()
     this.state = {
-      recipe: {}
+      recipe: {},
+      reviews: [],
+      review: ''
       //empty review form?
     }
   }
@@ -78,14 +77,25 @@ export default class RecipeDetails extends Component {
           <div className="reviews">
             <div><h3>Reviews</h3></div>
             <div>REVIEW PLACEHOLDER</div>
-
             {/* <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>ADD REVIEW</button> */}
 
-            <div>
-              <AddReview>
-              </AddReview>
+          
+            <div className="review-list">
+              {recipe.reviews.length ? (
+                  recipe.reviews.map((review) => (
+                    <div key={review._id}>
+                      <ReviewCard 
+                        key={review._id} 
+                        // onClick={() => this.props.history.push(`/home/recipes/get/${recipe._id}`)} 
+                        text={review.text}
+                      />
+                    </div>
+                ))
+              ) : (
+                  <h3>No Reviews</h3>
+              )}
+   
             </div>
-            
 
           </div>
         </section>
@@ -96,17 +106,3 @@ export default class RecipeDetails extends Component {
 }
 
 
-{/* <div className="review-container">
-{review.comments.length ? (
-  recipe.review.map((review) => (
-    <li className="review-list" key={review._id}>
-      <p>
-        <Link>{review.user_id.name}</Link>
-      </p>
-      <p>{review.review}</p>
-    </li>
-  ))
-) : (
-  <h3>No Comments</h3>
-)}
-</div> */}

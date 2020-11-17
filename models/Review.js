@@ -3,14 +3,10 @@ const Schema = mongoose.Schema
 
 const Review = new Schema(
   {
-    comment: {
+    text: {
       type: String,
       required: true
-    },
-    recipe_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'recipes'
-      }
+    }
   },
   { timestamps: true }
 )

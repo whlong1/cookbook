@@ -1,17 +1,37 @@
-const Review = require('../models/review');
+const Review = require('../models/review')
+const Recipe = require('../models/recipe')
+
+
+// const AddReview = async (request, response) => {
+//     try {
+//         const review = await new Review(...request.body, )
+//         await review.save()
+//         return response.status(201).json({
+//             review,
+//         });
+//     } catch (error) {
+//         return response.status(500).json({ error: error.message })
+//     }
+// }
 
 
 const AddReview = async (request, response) => {
     try {
-        const review = await new Review(request.body)
+        const review = await new Review({...request.body})
         await review.save()
-        return response.status(201).json({
-            review,
-        });
-    } catch (error) {
-        return response.status(500).json({ error: error.message })
+        await Recipe.update(
+            {_id: request.params.recipe_id },
+            {
+              $push: {
+                reviews: review
+              }
+            }
+          )
+          response.send(review)
+        } catch (error) {
+          throw error
+        }
     }
-}
 
 const GetReview = async (request, response) => {
     try {
