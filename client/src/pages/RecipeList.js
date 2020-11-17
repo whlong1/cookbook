@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {__GetListByStyle} from '../services/RecipeService'
 import '../styles/RecipeCard.css'
 
+import {__GetListByStyle} from '../services/RecipeService'
 import RecipeCard from '../components/RecipeCard'
 
 export default class RecipeList extends Component {
@@ -17,7 +17,6 @@ componentDidMount() {
   this.getRecipesByStyle()
 }
 
-
 getRecipesByStyle = async () => {
   try {
     const data = await __GetListByStyle(this.props.match.params.style)
@@ -27,8 +26,6 @@ getRecipesByStyle = async () => {
     console.log(error)
   }
 }
-
-
 
 render() {
   const {recipes} = this.state

@@ -20,7 +20,6 @@ const Recipe = new Schema(
     },
     image: {
       type: String,
-      // required: true
     },
     user_id: {
         type: Schema.Types.ObjectId,

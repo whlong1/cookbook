@@ -4,7 +4,6 @@ import '../styles/AddRecipe.css'
 import {__GetRecipe, __UpdateRecipe} from '../services/RecipeService'
 
 
-
 export default class EditRecipe extends Component {
     constructor() {
       super()
@@ -59,7 +58,6 @@ export default class EditRecipe extends Component {
         }
     }
 
-  
     render() {
       const {title, author, prep_time, description, image, style} = this.state
       console.log(this.state)

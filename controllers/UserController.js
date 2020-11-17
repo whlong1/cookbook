@@ -5,8 +5,6 @@ const {
   } = require('../middleware/PasswordHandler')
 
 
-//=========
-//create a user
 const AddUser = async (request, response) => {
     try {
         const body = request.body
@@ -52,19 +50,6 @@ const SignInUser = async (request, response, next) => {
       throw error
     }
   }
-//=========
-
-// const AddUser = async (request, response) => {
-//     try {
-//         const user = await new User(request.body)
-//         await user.save()
-//         return response.status(201).json({
-//             user,
-//         });
-//     } catch (error) {
-//         return response.status(500).json({ error: error.message })
-//     }
-// }
 
 
 const GetUser = async (request, response) => {

@@ -23,7 +23,6 @@ export default class AddRecipe extends Component {
     handleSubmit = async (event) => {
         event.preventDefault()
         try {
-          // await __AddRecipe(this.state)
           console.log(this.state)
           let stored = await __AddRecipe(this.state)
           console.log('IT WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', stored)

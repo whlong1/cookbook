@@ -1,7 +1,5 @@
 import ApiClient from './ApiClient'
 
-
-
 export const __GetCuisine = async (cuisineid) => {
   try {
     const response = await ApiClient.get(`/cuisine/get/${cuisineid}`)
@@ -10,10 +8,6 @@ export const __GetCuisine = async (cuisineid) => {
     throw error
   }
 }
-
-
-//Add to Router
-
 
 export const __GetAllCuisine = async () => {
   try {

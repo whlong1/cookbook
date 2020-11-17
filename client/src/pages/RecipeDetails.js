@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import '../styles/RecipeDetails.css'
+
 import { __GetRecipe } from '../services/RecipeService'
 import { __DeleteRecipe } from '../services/RecipeService'
 import {__AddReview} from '../services/ReviewService'
-import '../styles/RecipeDetails.css'
+
 import TextInput from '../components/TextInput'
 import ReviewCard from '../components/ReviewCard'
 
@@ -22,11 +24,9 @@ export default class RecipeDetails extends Component {
 
   getRecipeDetails = async () => {
     const data = await __GetRecipe(this.props.match.params.recipe_id)
-    // console.log('LINE 26', data)
     this.setState({ recipe: data, reviews: data.reviews })
     console.log('STATE', this.state.reviews)
   }
-
 
   delete = async (recipeId) => {
     try {
@@ -40,14 +40,9 @@ export default class RecipeDetails extends Component {
     }
   }
 
-
-
-  //=============
-
   handleChange = ({target}) => {
     this.setState({[target.name]: target.value})
   }
-
 
   handleSubmit = async (event) => {
     event.preventDefault()
@@ -58,7 +53,6 @@ export default class RecipeDetails extends Component {
       console.log(error)
     }
   }
-
 
   render() {
     const { recipe, review, reviews, text } = this.state
@@ -89,7 +83,6 @@ export default class RecipeDetails extends Component {
               <div><h3>Reviews</h3></div>
               <div>REVIEW PLACEHOLDER</div>
 
-
               <div className="review-list">
                 {recipe.reviews.length ? (
                   recipe.reviews.map((review) => (
@@ -104,7 +97,6 @@ export default class RecipeDetails extends Component {
                     <h3>No Reviews</h3>
                   )}
               </div>
-
 
               <div className="entry">
                 <form onSubmit={this.handleSubmit}>
@@ -121,8 +113,6 @@ export default class RecipeDetails extends Component {
 
             </div>
           </section>
-
-
 
         </div>
       )
