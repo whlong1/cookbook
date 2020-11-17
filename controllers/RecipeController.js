@@ -32,22 +32,24 @@ const FindRecipe = async (request, response) => {
     }
 }
 
-//========
+
 
 const GetRecipeById = async (request, response) => {
     try{
         const {recipe_id} = request.params
-        const recipe = await Recipe.findById(recipe_id)
-        if (recipe) {
-            return response.status(200).json({recipe})
-        }
-        return response.status(404).send('Cannot find a recipe with that id');
-    } catch (error) {
-        return response.status(500).send(error.message, 'Error')
+        const recipe = await Recipe.findById(recipe_id).populate([
+            {
+                path: 'reviews',
+                model: 'reviews'
+            }
+        ])
+        response.send(recipe)
+    }
+    catch (error) {
+        throw error
     }
 }
 
-//========
 
 const ListRecipesByStyle = async (request, response) => {
     try{

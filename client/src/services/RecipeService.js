@@ -1,6 +1,5 @@
 import ApiClient from './ApiClient'
 
-//LOOK AT (FORM DATA), AFTER AUTH, ADD USERID
 export const __AddRecipe = async (formData) => {
   try {
     const response = await ApiClient.post(`/recipes/add`, formData)
@@ -24,6 +23,7 @@ export const __GetListByStyle = async (style) => {
 export const __GetRecipe = async (recipeid) => {
   try {
     const response = await ApiClient.get(`/recipes/get/${recipeid}`)
+    console.log('HERE', response.data)
     return response.data
   } catch (error) {
     throw error
