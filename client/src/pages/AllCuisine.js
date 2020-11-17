@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {__GetAllCuisine} from '../services/CuisineService'
-import '../styles/RecipeCard.css'
 
 import CuisineCard from '../components/CuisineCard'
 
@@ -43,7 +42,6 @@ render() {
       <div>
         {cuisine.map((cuisine) => (
           <CuisineCard
-          
             key={cuisine._id}
             onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine.name}`)}
             name={cuisine.name}

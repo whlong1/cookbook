@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../styles/RecipeCard.css'
 
 import {__GetListByStyle} from '../services/RecipeService'
 import RecipeCard from '../components/RecipeCard'

@@ -1,16 +1,20 @@
 import React from 'react'
+import '../styles/Card.css'
 
 const CuisineCard = ({onClick, image, name}) => (
-  <div className="recipe-card" onClick={onClick}>
+  <div className="card" onClick={onClick}>
     <div className="banner">
         <img src={image}></img>
     </div>
     <div className="details">
-        <h3>{name}</h3>
+      <div className="titleBox">
+        <div className="decBorder">
+          <h3>{name}</h3>
+        </div>
+      </div>
     </div>
   </div>
 )
 
 export default CuisineCard
-
 

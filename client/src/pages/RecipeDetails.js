@@ -81,8 +81,6 @@ export default class RecipeDetails extends Component {
             </div>
             <div className="reviews">
               <div><h3>Reviews</h3></div>
-              <div>REVIEW PLACEHOLDER</div>
-
               <div className="review-list">
                 {recipe.reviews.length ? (
                   recipe.reviews.map((review) => (
