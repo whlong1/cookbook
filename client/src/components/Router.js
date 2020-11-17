@@ -116,6 +116,13 @@ verifyTokenValid = async () => {
                         <AllCuisine {...props}/>
                       )}
                     />
+                    {/* <Route 
+                      path="/home/review/add"
+                      //POTENTIAL ISSUE
+                      component={(props) => (
+                        <RecipeDetails {...props}/>
+                      )}
+                    /> */}
                                         
                 </Switch>
             )}
