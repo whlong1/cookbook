@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import TextInput from '../components/TextInput'
 import {__AddUser} from '../services/UserService'
+
 import '../styles/SignUp.css'
+import '../styles/Details.css'
 
 export default class Signup extends Component {
   constructor() {
@@ -32,6 +34,7 @@ export default class Signup extends Component {
     const {name, email, password} = this.state
     return (
       <div className="page-layout">
+        <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <TextInput

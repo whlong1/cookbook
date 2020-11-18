@@ -59,35 +59,25 @@ export default class RecipeDetails extends Component {
     if (this.state.recipe) {
       return (
         <div className="pageLayoutD">
-
           <nav className="navigationD">
-            <button onClick={() => this.props.history.push(`/`)}>Back</button>
-            {/* <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
-            <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button> */}
+            <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
           </nav>
-
           <div className="pageSpreadD">
-
-
             <section className="leftSideD">
-
               <div className="recipeHeaderD">
                 <h2 className="recTitleD">{recipe.title}</h2>
                 <div className="userButtons">
-                  <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
-                  <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button>
+                  <button className="uB" onClick={() => this.delete(recipe._id)}>Delete</button>
+                  <button className="uB" onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit</button>
                 </div>
               </div>
               <div className="descriptionD">
                 <p>Author: {recipe.author}</p>
                 <p>Category: {recipe.style}</p>
                 <p>Preparation Time: {recipe.prep_time}</p>
-                <p>Description: {recipe.description}</p>
+                <p className="descripT">Description:</p>
+                <p className="blurb">{recipe.description}</p>
               </div>
-
-
-
-
               <div className="reviewsD">
                 <div>
                   <p className="rTitle">User Reviews</p>
@@ -103,31 +93,24 @@ export default class RecipeDetails extends Component {
                       </div>
                     ))
                   ) : (
-                      <h3>No Reviews</h3>
+                      <div></div>
                     )}
                 </div>
-
                 <div className="entryD">
                   <form className="formBoxD" onSubmit={this.handleSubmit}>
-
                     <TextInput
                       className="typeHereD"
                       fieldType="textfield"
-                      placeholder="..."
+                      placeholder=""
                       name="text"
                       value={text}
                       onChange={this.handleChange}
                     />
                     <button className="subButtonD" type="submit">POST REVIEW</button>
-
                   </form>
                 </div>
               </div>
             </section>
-
-
-
-
             <section className="rightSideD">
               <div>
                 <img 
@@ -135,15 +118,11 @@ export default class RecipeDetails extends Component {
                   src={recipe.image} alt="an example of the current recipe" />
               </div>
             </section>
-
-          
-
           </div>
-
         </div>
       )
     }
-    return <h1>LOADING</h1>
+    return <h6>LOADING</h6>
   }
 }
 

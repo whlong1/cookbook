@@ -53,7 +53,6 @@ verifyTokenValid = async () => {
   }
 
     
-
     render() {
         return (
             <main>

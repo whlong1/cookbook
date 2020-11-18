@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
-import '../styles/SignUp.css'
 import TextInput from '../components/TextInput'
 import {__LoginUser} from '../services/UserService'
+
+import '../styles/SignUp.css'
+import '../styles/Details.css'
 
 
 export default class SignIn extends Component {
@@ -11,7 +13,6 @@ export default class SignIn extends Component {
       email: '',
       password: '',
       formError: false,
-      // loggedIn: false
     }
   }
 
@@ -26,8 +27,6 @@ export default class SignIn extends Component {
       const loginData = await __LoginUser(this.state)
       this.props.toggleAuthenticated(true)
       this.props.history.push('/')
-      // this.setState({loggedIn: true})
-      // console.log('LOGGED', this.state)
     } catch (error) {
       this.setState({ formError: true })
     }
@@ -37,6 +36,7 @@ export default class SignIn extends Component {
     const {email, password} = this.state
     return (
       <div className="pageLayout">
+        <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <TextInput

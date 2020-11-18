@@ -37,7 +37,7 @@ render() {
     <div className="pageLayout">
       
       <div>
-        <button onClick={() => this.props.history.push(`/`)}>HOME</button>
+        <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
       </div>
       
       <div className="pageSpread">

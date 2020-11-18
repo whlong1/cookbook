@@ -6,26 +6,30 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
  }
- 
+
+
+.backButton {
+    padding: 5px;
+    color: black;
+    background: none;
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 10pt;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
  .leftSideD {
     width: 50%;
-    /* height: auto; */
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
-
     display: table;
     table-layout: fixed;
-    border: 1px solid #c2c2c2;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 12px;
-
-
-
+    padding: 18px;
   }
  
   .rightSideD {
@@ -35,31 +39,37 @@
   .pagePhotoD {
     margin: 0 auto;
     margin-left: 15px;
-
-
   }
   
 
 
 .recipeHeaderD {
     display: flex;
-
-
     width: 100%;
     height: 100%;
-    background: red;
+    background: none;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .userButtons {
     display: flex;
     flex-direction: row;
-
     justify-content: right;
     align-items: center;
+    padding-left: 18vw;
+}
 
-    padding-left: 190px;
-
-
+.uB {
+    background-color:   transparent;
+    color: black;
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 11pt;
+    border: none;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-top: 0;
+    font-weight: 500;
+    font-style: normal;
 }
 
 
@@ -67,10 +77,6 @@
 
 
 .recTitleD {
-    background: pink;
-
-
-
     font-family: 'canada-type-gibson', sans-serif;
     font-size: 24px;
     font-weight: 500;
@@ -78,77 +84,63 @@
     color: black;
 }
 
-p {
+.descripT {
+    margin-top: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+}
 
-    font-family: 'canada-type-gibson', sans-serif;
-    font-size: 10pt;
 
-    font-weight: 400;
-
-    font-style: normal;
-
+.blurb{
+    line-height: 2;
+    text-align: justify;
+    text-justify: distribute;
 }
 
 
 
-
-
-/* 
-.reviewsD {
-    
-    width: 100%;
-    height: 0;
-    background: red;
-
-} */
+p {
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
 .reviewsD {
     padding-top: 2px;
-    
     width: 100%;
-
-    background: red;
-
+    border-top: 1px solid #e1e1e1;
 }
 
 .rTitle{
-
     font-family: 'canada-type-gibson', sans-serif;
     font-size: 11pt;
-
     font-weight: 500;
-
     font-style: normal;
-
-
 }
 
 
 
 
 .reviewListD {
-    background: green;
-    border: 5px solid pink;
+    border-top: 1px solid #e1e1e1;
 }
 
 .reviewBlockD {
-    /* height: 100%; */
-    border: 5px solid black;
-    
+    margin-top: 10px;
+    background: #eff4f6;
+    padding: 5px;    
 }
 
-.entryD {
-    margin-top: 40px;
 
+.entryD {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: blue;
     width: 100%;
-    /* height: 50%; */
-    
 }
 
 .formBoxD {
@@ -157,23 +149,31 @@ p {
     flex-direction: column;
     justify-content: center;
     width: 75%;
-    height: 150px;
-
-    /* height: auto; */
+    height: 110px;
     min-width: 100%;
     padding: 0;
-
 }
 
 
 textarea {
+    opacity: 35%;
     height: 50%
 }
 
 
 .subButtonD{
+    margin-top: 12px;
     min-width: 100%;
     height: 35px;
+    background-color: black;
+    color: white;
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 11pt;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    font-style: normal;
 }
+
 
 
