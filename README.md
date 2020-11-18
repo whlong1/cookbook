@@ -39,6 +39,10 @@ Homepage
 Recipe Page
 ![Read Recipe](https://i.imgur.com/XR92tML.png)
 
+Mockup
+![Home](https://i.imgur.com/fCOEj1r.png)
+
+
 ***
 
 ### Getting Started
@@ -68,6 +72,14 @@ With CookBook, a user can add their favorite recipe to an online database. Recip
 
 ***
 
+### Code Snippet
+
+![Code](https://i.imgur.com/5TWk0y7.png)
+
+
+
+***
+
 
 ### Stretch Goals
 
@@ -84,4 +96,43 @@ With CookBook, a user can add their favorite recipe to an online database. Recip
 
 ### Credits
 
-TBD
+Special Thanks
+
+Design Inspiration:
+Dwinawan for Paperpillar
+https://dribbble.com/shots/14441287--Exploration-Food-Website
+
+
+Photo Cedits:
+
+
+Photo by Kristina Gain from Pexels
+https://www.pexels.com/photo/food-pizza-coffee-brunch-4103221/
+
+Photo by Elli from Pexels
+https://www.pexels.com/photo/slice-cake-1854652/
+
+Photo by Daria Shevtsova from Pexels
+https://www.pexels.com/photo/avocado-toast-1824353/
+https://www.pexels.com/photo/cooked-food-served-on-white-ceramic-bowl-949067/
+
+
+Photo by Saveurs secretes from Pexels
+https://www.pexels.com/photo/food-plate-brunch-dinner-5769256/
+
+
+
+Photo by Randy Fath on Unsplash
+https://unsplash.com/photos/SQ20tWzxXO0
+
+
+Photo by Calum Lewis on Unsplash
+https://unsplash.com/photos/8Nc_oQsc2qQ
+
+
+Photo by Rachel Park on Unsplash
+https://unsplash.com/photos/hrlvr2ZlUNk
+
+
+
+
