@@ -42,6 +42,8 @@ img {
     /* background: rgba(0, 0, 0, 0.5);
     border: 1px solid white; */
     background: white;
+
+    
     
     position: absolute;
     top: 50%;
@@ -97,12 +99,8 @@ h3{
 
 }
 
-h4{
-    margin: 0 auto;
-    font-family: 'sybarite', serif;
-    text-align: center;
 
-}
+
 
 
 

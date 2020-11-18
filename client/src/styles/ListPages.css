@@ -1,0 +1,79 @@
+.pageSpread {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+ }
+ 
+ .leftSide {
+    width: 50%;
+    height: 90%;
+    /* background-color:red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .rightSide {
+    width: 50%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    
+  }
+
+  .pagePhoto {
+    max-width:100%;
+    height:auto;
+
+  }
+  
+
+
+ 
+
+ 
+ /* .welcome{
+    display: flex;
+    font-size: 1.85rem;
+ 
+ 
+    font-family: 'sybarite', serif !important;
+ }
+ 
+ .yellow-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd200;
+    width: 80px;
+    height: 6px;
+ }
+ 
+ nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-family: 'canada-type-gibson', sans-serif;
+ }
+ 
+ a:hover, a:visited, a:link, a:active
+ {
+    text-decoration: none;
+    font-family: 'canada-type-gibson', sans-serif;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+ } */
+ 

@@ -1,0 +1,179 @@
+.pageSpreadD {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+ }
+ 
+ .leftSideD {
+    width: 50%;
+    /* height: auto; */
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    display: table;
+    table-layout: fixed;
+    border: 1px solid #c2c2c2;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 12px;
+
+
+
+  }
+ 
+  .rightSideD {
+    width: 50%;    
+  }
+
+  .pagePhotoD {
+    margin: 0 auto;
+    margin-left: 15px;
+
+
+  }
+  
+
+
+.recipeHeaderD {
+    display: flex;
+
+
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+.userButtons {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: right;
+    align-items: center;
+
+    padding-left: 190px;
+
+
+}
+
+
+
+
+
+.recTitleD {
+    background: pink;
+
+
+
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+}
+
+p {
+
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 10pt;
+
+    font-weight: 400;
+
+    font-style: normal;
+
+}
+
+
+
+
+
+/* 
+.reviewsD {
+    
+    width: 100%;
+    height: 0;
+    background: red;
+
+} */
+
+
+.reviewsD {
+    padding-top: 2px;
+    
+    width: 100%;
+
+    background: red;
+
+}
+
+.rTitle{
+
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 11pt;
+
+    font-weight: 500;
+
+    font-style: normal;
+
+
+}
+
+
+
+
+.reviewListD {
+    background: green;
+    border: 5px solid pink;
+}
+
+.reviewBlockD {
+    /* height: 100%; */
+    border: 5px solid black;
+    
+}
+
+.entryD {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    width: 100%;
+    /* height: 50%; */
+    
+}
+
+.formBoxD {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    height: 150px;
+
+    /* height: auto; */
+    min-width: 100%;
+    padding: 0;
+
+}
+
+
+textarea {
+    height: 50%
+}
+
+
+.subButtonD{
+    min-width: 100%;
+    height: 35px;
+}
+
+

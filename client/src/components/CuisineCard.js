@@ -17,4 +17,3 @@ const CuisineCard = ({onClick, image, name}) => (
 )
 
 export default CuisineCard
-

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/RecipeDetails.css'
+import '../styles/Details.css'
 
 import { __GetRecipe } from '../services/RecipeService'
 import { __DeleteRecipe } from '../services/RecipeService'
@@ -58,59 +58,87 @@ export default class RecipeDetails extends Component {
     const { recipe, review, reviews, text } = this.state
     if (this.state.recipe) {
       return (
-        <div>
-          <button onClick={() => this.props.history.push(`/`)}>HOME</button>
-          <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
-          <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button>
+        <div className="pageLayoutD">
 
-          <section>
-            <div>
-              <img src={recipe.image} alt="an example of the current recipe" />
-            </div>
-          </section>
+          <nav className="navigationD">
+            <button onClick={() => this.props.history.push(`/`)}>Back</button>
+            {/* <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
+            <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button> */}
+          </nav>
 
-          <section>
-            <div className="recipe-header">
-              <h1>{recipe.title}</h1>
-              <h3>By: {recipe.author}</h3>
-            </div>
-            <div className="description">
-              <p>Type: {recipe.style}</p>
-              <p>Preparation Time: {recipe.prep_time}</p>
-              <p>Description: {recipe.description}</p>
-            </div>
-            <div className="reviews">
-              <div><h3>Reviews</h3></div>
-              <div className="review-list">
-                {recipe.reviews.length ? (
-                  recipe.reviews.map((review) => (
-                    <div key={review._id}>
-                      <ReviewCard
-                        key={review._id}
-                        text={review.text}
-                      />
-                    </div>
-                  ))
-                ) : (
-                    <h3>No Reviews</h3>
-                  )}
+          <div className="pageSpreadD">
+
+
+            <section className="leftSideD">
+
+              <div className="recipeHeaderD">
+                <h2 className="recTitleD">{recipe.title}</h2>
+                <div className="userButtons">
+                  <button onClick={() => this.delete(recipe._id)}>Delete Recipe</button>
+                  <button onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit Recipe</button>
+                </div>
+              </div>
+              <div className="descriptionD">
+                <p>Author: {recipe.author}</p>
+                <p>Category: {recipe.style}</p>
+                <p>Preparation Time: {recipe.prep_time}</p>
+                <p>Description: {recipe.description}</p>
               </div>
 
-              <div className="entry">
-                <form onSubmit={this.handleSubmit}>
-                  <TextInput
-                    fieldType="textfield"
-                    placeholder="review"
-                    name="text"
-                    value={text}
-                    onChange={this.handleChange}
-                  />
-                  <button type="submit">POST REVIEW</button>
-                </form>
-              </div>
 
-            </div>
-          </section>
+
+
+              <div className="reviewsD">
+                <div>
+                  <p className="rTitle">User Reviews</p>
+                </div>
+                <div className="reviewListD">
+                  {recipe.reviews.length ? (
+                    recipe.reviews.map((review) => (
+                      <div className="reviewBlockD" key={review._id}>
+                        <ReviewCard
+                          key={review._id}
+                          text={review.text}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                      <h3>No Reviews</h3>
+                    )}
+                </div>
+
+                <div className="entryD">
+                  <form className="formBoxD" onSubmit={this.handleSubmit}>
+
+                    <TextInput
+                      className="typeHereD"
+                      fieldType="textfield"
+                      placeholder="..."
+                      name="text"
+                      value={text}
+                      onChange={this.handleChange}
+                    />
+                    <button className="subButtonD" type="submit">POST REVIEW</button>
+
+                  </form>
+                </div>
+              </div>
+            </section>
+
+
+
+
+            <section className="rightSideD">
+              <div>
+                <img 
+                  className="pagePhotoD"
+                  src={recipe.image} alt="an example of the current recipe" />
+              </div>
+            </section>
+
+          
+
+          </div>
 
         </div>
       )

@@ -3,6 +3,12 @@ import React, {Component} from 'react'
 import {__GetListByStyle} from '../services/RecipeService'
 import RecipeCard from '../components/RecipeCard'
 
+import '../styles/ListPages.css'
+
+import Panel from '../assets/panels3.jpg'
+
+
+
 export default class RecipeList extends Component {
   constructor() {
     super()
@@ -28,23 +34,41 @@ getRecipesByStyle = async () => {
 render() {
   const {recipes} = this.state
   return (
-    <div>
+    <div className="pageLayout">
       
       <div>
         <button onClick={() => this.props.history.push(`/`)}>HOME</button>
       </div>
       
-      <div>
-        {recipes.map((recipe) => (
-          <RecipeCard
-            key={recipe._id}
-            onClick={() => this.props.history.push(`/home/recipes/get/${recipe._id}`)}
-            title={recipe.title}
-            author={recipe.author}
-            image={recipe.image}
-          />
-        ))}
+      <div className="pageSpread">
+
+        <div className="leftSide">
+          {recipes.map((recipe) => (
+            <RecipeCard
+              key={recipe._id}
+              onClick={() => this.props.history.push(`/home/recipes/get/${recipe._id}`)}
+              title={recipe.title}
+              author={recipe.author}
+              image={recipe.image}
+            />
+          ))}
+        </div>
+
+        <div className="rightSide">
+            <img 
+              className="pagePhoto" 
+              src={Panel}
+            ></img>
+        </div>
+
+      
+
       </div>
+
+
+
+    
+
     </div>
   )
 }

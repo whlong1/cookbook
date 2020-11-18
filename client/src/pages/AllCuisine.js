@@ -1,5 +1,11 @@
 import React, {Component} from 'react'
 import {__GetAllCuisine} from '../services/CuisineService'
+import '../styles/ListPages.css'
+
+import Panel from '../assets/panels4.jpg'
+
+
+
 
 import CuisineCard from '../components/CuisineCard'
 
@@ -33,23 +39,41 @@ render() {
   const {cuisine} = this.state
   console.log('RENDER', cuisine)
   return (
-    <div>
-      
-      <div>
+    <div className="pageLayout">
+
+       <div>
         <button onClick={() => this.props.history.push(`/`)}>HOME</button>
       </div>
+
       
-      <div>
-        {cuisine.map((cuisine) => (
-          <CuisineCard
-            key={cuisine._id}
-            onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine.name}`)}
-            name={cuisine.name}
-            image={cuisine.image}
-          />
-        ))}
+      <div className="pageSpread">
+        
+        <div className="leftSide">
+          {cuisine.map((cuisine) => (
+            <CuisineCard
+              key={cuisine._id}
+              onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine.name}`)}
+              name={cuisine.name}
+              image={cuisine.image}
+            />
+          ))}
+        </div>
+        
+
+        <div className="rightSide">
+          <img 
+            className="pagePhoto" 
+            src={Panel}
+          ></img>
+        </div>
+
+
       </div>
+
+  
+
     </div>
   )
 }
 }
+
