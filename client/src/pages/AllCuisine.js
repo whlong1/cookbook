@@ -37,8 +37,8 @@ render() {
   console.log('RENDER', cuisine)
   return (
     <div className="pageLayout">
-      <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
       <div className="pageSpread">
+      <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="leftSide">
           {cuisine.map((cuisine) => (
             <CuisineCard

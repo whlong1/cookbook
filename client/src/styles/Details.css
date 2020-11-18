@@ -9,7 +9,7 @@
  }
 
 
-.backButton {
+.backButtonRd {
     padding: 5px;
     color: black;
     background: none;
@@ -56,7 +56,7 @@
     flex-direction: row;
     justify-content: right;
     align-items: center;
-    padding-left: 18vw;
+    padding-left: 30vw;
 }
 
 .uB {

@@ -41,7 +41,7 @@ export default class AddRecipe extends Component {
       return (
         <div>
           <button onClick={() => this.props.history.push(`/`)}>HOME</button>
-          <div><h1>ADD RECIPE</h1></div>
+          <div><h2>ADD RECIPE</h2></div>
           <form onSubmit={this.handleSubmit}>
             <TextInput
               placeholder="title"

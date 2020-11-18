@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    /* border-radius: 5px; */
     height: 200px;
     width: 200px;
     margin: 15px;
@@ -31,20 +30,13 @@ img {
     margin: 0 auto;
     width: 99%;
     height: 99%;
-
-
 }
 
 
 
 .titleBox{
     margin: 0 auto;
-    /* background: rgba(0, 0, 0, 0.5);
-    border: 1px solid white; */
     background: white;
-
-    
-    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,43 +52,28 @@ img {
     align-items: center;
     margin: 0 auto;
     border: .25px solid lightgrey;
-
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 92%;
     height: 92%;
-    
 
 }
 
 
 h3{
     font-family: 'acumin-pro-extra-condensed', sans-serif;
-
     font-weight: 600;
-
     font-style: normal;
-
-    /* text-shadow: 0px 2px 2px #000000; */
-
-
     color: black;
-
-
     margin: 0 auto;
-
     text-align: center;
-    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     font-size: 1.5rem;
- 
-
 }
 
 

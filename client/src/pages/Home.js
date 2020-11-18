@@ -25,9 +25,6 @@ export default (props) => {
                 <div>
                     <FoodList></FoodList>
                 </div>
-
-
-                
             </div>
         </div>
     </div>

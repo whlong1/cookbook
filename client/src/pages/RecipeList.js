@@ -35,13 +35,8 @@ render() {
   const {recipes} = this.state
   return (
     <div className="pageLayout">
-      
-      <div>
-        <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
-      </div>
-      
       <div className="pageSpread">
-
+      <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="leftSide">
           {recipes.map((recipe) => (
             <RecipeCard
@@ -60,15 +55,7 @@ render() {
               src={Panel}
             ></img>
         </div>
-
-      
-
       </div>
-
-
-
-    
-
     </div>
   )
 }

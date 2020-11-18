@@ -60,7 +60,8 @@ export default class RecipeDetails extends Component {
       return (
         <div className="pageLayoutD">
           <nav className="navigationD">
-            <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
+            <button className="backButtonRd" onClick={() => this.props.history.push('/')}>Home</button>
+            <button className="backButtonRd" onClick={() => this.props.history.goBack()}>Back</button>
           </nav>
           <div className="pageSpreadD">
             <section className="leftSideD">
@@ -125,5 +126,3 @@ export default class RecipeDetails extends Component {
     return <h6>LOADING</h6>
   }
 }
-
-

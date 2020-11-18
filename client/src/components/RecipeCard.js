@@ -7,12 +7,14 @@ const RecipeCard = ({onClick, image, title, author}) => (
         <img src={image}></img>
     </div>
     <div className="details">
-        <div className="titleBorder">
-          <h3>{title}</h3>
+        <div className="titleBox">
+          <div className="decBorder">
+            <h3>{title}</h3>
+          </div>
         </div>
-        <h4>By: {author}</h4>
     </div>
   </div>
 )
 
 export default RecipeCard
+

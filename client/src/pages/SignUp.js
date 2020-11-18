@@ -34,7 +34,7 @@ export default class Signup extends Component {
     const {name, email, password} = this.state
     return (
       <div className="page-layout">
-        <button className="backButton" onClick={() => this.props.history.goBack()}>Back</button>
+        <button className="backButtonS" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <TextInput
@@ -58,7 +58,7 @@ export default class Signup extends Component {
               type="password"
               onChange={this.handleChange}
             />
-            <button type="submit">SIGN UP</button>
+            <button className="subButtonS" type="submit">SIGN UP</button>
           </form>
         </div>
         <div className="photocont"></div>

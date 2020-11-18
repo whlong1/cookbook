@@ -1,48 +1,63 @@
+.pageLayout{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+
+
 .pageSpread {
     width: 100%;
-    height: 80vh;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: row;
-    
  }
+
+ .rightSide {
+  margin:0; 
+  padding:0; 
+  width: 52%;
+  padding-left: 80px;
+}
+
  
  .leftSide {
+    margin-top: 125px;
     height: 100%;
     justify-content: center;
     align-items: center;
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 180px 180px 180px;
     grid-gap: 40px;
-    background-color: #fff;
-    color: #444;  
-  }
- 
-  .rightSide {
-    margin:0; 
-    padding:0; 
-    width: 50%;
-    height:100%; 
-    
   }
 
+  .card{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+ 
+ 
   .pagePhoto {
-    max-width:100%;
-    height:auto;
-    margin-left: 15px;
-    margin-bottom: 1000px;
+    margin-left: 22px;
   }
   
-  .backButton {
-   padding: 5px;
-   color: black;
-   background: none;
-   font-family: 'canada-type-gibson', sans-serif;
-   font-size: 10pt;
-   border: none;
-   border-radius: 5px;
-   font-weight: 500;
-   font-style: normal;
-   margin-bottom: 30px;
-   margin-left: 10px;
+  .backButtonL {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    padding: 0;
+    padding: 5px;
+    color: black;
+    background: none;
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 10pt;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 40px;
+    margin-left: 10px;
 }
+
