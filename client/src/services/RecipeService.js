@@ -51,3 +51,14 @@ export const __DeleteRecipe = async (recipeid) => {
 
 
 
+
+
+// export const __EditPost = async (formData, postid) => {
+//   try {
+//     const response = await ApiClient.put(`/posts/edit/${postid}`, formData)
+//     console.log(response.data)
+//     return response.data
+//   } catch (error) {
+//     throw error
+//   }
+// }

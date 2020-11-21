@@ -103,14 +103,12 @@ verifyTokenValid = async () => {
                     />
                     <Route 
                       path="/home/recipes/edit/:recipe_id"
-                      
                       component={(props) => (
                         <EditRecipe {...props}/>
                       )}
                     />
                     <Route 
                       path="/home/cuisine/all"
-                      
                       component={(props) => (
                         <AllCuisine {...props}/>
                       )}
