@@ -26,7 +26,7 @@ app.get('*', (req, res) =>
 
 app.get('/', (request, response) => response.send('Root test'))
 
-app.use('/home', AppRouter);
+app.use('/api', AppRouter);
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
