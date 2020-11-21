@@ -20,13 +20,11 @@ app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 //Middleware
 
+app.use('/api', AppRouter);
+
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 )
-
-app.get('/', (request, response) => response.send('Root test'))
-
-app.use('/api', AppRouter);
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
