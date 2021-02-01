@@ -5,6 +5,8 @@
 ### By: William Hunter Long
 
 [GitHub](https://github.com/whlong1)
+
+[Deployed Link](https://cookbook-project-two.herokuapp.com/) 
 *** 
 
 ### Overview
@@ -16,6 +18,8 @@ CookBook is an online database of recipes.
 • Upload your own recipes.
 
 • Review recipes submitted by other users.
+
+
 
 
 ***

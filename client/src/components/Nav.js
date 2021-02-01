@@ -4,7 +4,11 @@ import {NavLink} from 'react-router-dom'
 
 export default ({className, authenticated}) => {
   console.log(authenticated)
+
+
   return authenticated ? (
+
+
     <header className={className}>
       <div></div>
       <nav>
@@ -13,7 +17,9 @@ export default ({className, authenticated}) => {
         <NavLink activeClassName="nav" to="/home/cuisine/all"><p className="add">BROWSE CUISINE</p></NavLink>
       </nav>
     </header>
+
   ) : (
+
     <header className={className}>
     <div></div>
     <nav>
