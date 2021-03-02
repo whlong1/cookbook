@@ -75,7 +75,7 @@ export default () => {
             <img title="Breakfast" src={Plate2} alt="pancakes"/>
           </Link>
 
-          <Link className="plate" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
+          <Link className="plate" to="/home/recipes/sort/PASTA" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d3}>Pasta</button>
             <img title="Pasta" src={Plate3} alt="pasta"/>
           </Link>
@@ -84,17 +84,17 @@ export default () => {
 
         <div className="columnB">
 
-          <Link className="plate" to="/home/recipes/sort/HEALTHY" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
+          <Link className="plate" to="/home/recipes/sort/CURRY" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d4}>Curry</button>
             <img title="Curry" src={Plate4} alt="curry"/>
           </Link>
 
-          <Link className="plate" to="/home/recipes/sort/HEALTHY" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
+          <Link className="plate" to="/home/recipes/sort/SALAD" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d5}>Salad</button>
             <img title="Salad" src={Plate5} alt="salad"/>
           </Link>
 
-          <Link className="plate" to="/home/recipes/sort/HEALTHY" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
+          <Link className="plate" to="/home/recipes/sort/DESSERT" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d6}>Dessert</button>
             <img title="Dessert" src={Plate6} alt="cake"/>
           </Link>
