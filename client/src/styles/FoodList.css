@@ -5,6 +5,10 @@
 
     margin: 20px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
@@ -61,3 +65,35 @@
     display: flex;
     flex-direction: column;
 }
+
+
+
+
+.productbox {
+    display: flex;
+    margin: auto;
+    height: 240px;
+    width: 240px;
+  }
+  
+  .invisible {
+    display: none;
+  }
+  
+  .visible {
+
+    font-family: 'sybarite', serif !important;
+    display: flex;
+    z-index: 10;
+    margin: 0 auto;
+    position: absolute;
+
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    /* border-radius: 10px;
+
+    background: rgba(192, 204, 211, 0.25);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba(255, 255, 255, 0.75); */
+  }
+  
