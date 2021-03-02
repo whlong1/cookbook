@@ -8,7 +8,6 @@ html{
 .homepage {
    width: 100vw;
    height: 100vh;
-   position: relative;
    display: flex;
 }
 
@@ -23,6 +22,12 @@ html{
 
  .homepage-right {
    width: 50%;
+   height: 100vh !important;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
    background-image: url("../assets/background.jpg");
  }
 
@@ -31,7 +36,6 @@ html{
 .welcome{
    display: flex;
    font-size: 1.85rem;
-
 
    font-family: 'sybarite', serif !important;
 }

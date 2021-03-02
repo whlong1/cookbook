@@ -58,9 +58,14 @@ export default () => {
 
   return (
     <div className="listcontainer">
+
+
       <div className="titleContainer">
         <h1 className="samplePlateTitle">Cuisine</h1>
+        <p>Lorem ipsum dolore ipsum emit dolore ipsum.</p>
       </div>
+
+
       <div className="plateContainer">
 
         <div className="columnA">
@@ -102,6 +107,9 @@ export default () => {
         </div>
 
       </div>
+
+      <div className="bottomBlock"></div>
+
     </div>
   )
 }

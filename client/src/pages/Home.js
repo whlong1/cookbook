@@ -21,6 +21,7 @@ export default (props) => {
                 </div>
             </div>
             <div className="homepage-right">
+                {/* <h1 className="samplePlateTitle">Cuisine</h1> */}
                 <FoodList></FoodList>
             </div>
         </div>
