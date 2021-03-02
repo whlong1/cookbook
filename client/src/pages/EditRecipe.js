@@ -20,6 +20,8 @@ export default class EditRecipe extends Component {
     componentDidMount() {
         this.getRecipe()
     }
+
+
   
     getRecipe = async () => {
         try {
