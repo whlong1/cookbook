@@ -12,7 +12,6 @@ export default class AllCuisine extends Component {
     this.state = {
       cuisine: [],
     }
-    console.log(this.state)
   }
 
 componentDidMount() {
@@ -24,7 +23,6 @@ getAll = async () => {
   try {
     const data = await __GetAllCuisine(this.props.match.params.cuisine)
     this.setState({cuisine: data.cuisine})
-    console.log('PAGE', this.state)
   } catch (error) {
     console.log(error)
   }
@@ -34,7 +32,6 @@ getAll = async () => {
 
 render() {
   const {cuisine} = this.state
-  console.log('RENDER', cuisine)
   return (
     <div className="pageLayout">
       <div className="pageSpread">

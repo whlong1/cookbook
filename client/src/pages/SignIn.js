@@ -22,7 +22,6 @@ export default class SignIn extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(this.state)
     try {
       const loginData = await __LoginUser(this.state)
       this.props.toggleAuthenticated(true)

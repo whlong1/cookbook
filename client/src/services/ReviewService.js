@@ -3,7 +3,6 @@ import ApiClient from './ApiClient'
 export const __AddReview = async (formData, recipeid) => {
     try {
       const response = await ApiClient.post(`/reviews/add/${recipeid}`, formData)
-      console.log('REVIEW RESPONSE', response.data)
       return response.data
     } catch (error) {
       throw error

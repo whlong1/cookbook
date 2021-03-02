@@ -12,7 +12,6 @@ export const __AddRecipe = async (formData) => {
 export const __GetListByStyle = async (style) => {
     try {
       const response = await ApiClient.get(`/recipes/sort/${style}`)
-      console.log(response.data)
       return response.data
     } catch (error) {
       throw error
@@ -31,7 +30,6 @@ export const __GetRecipe = async (recipeid) => {
 export const __UpdateRecipe = async (formData, recipeid) => {
   try {
     const response = await ApiClient.put(`/recipes/edit/${recipeid}`, formData)
-    console.log(response.data)
     return response.data
   } catch (error) {
     throw error
@@ -47,18 +45,3 @@ export const __DeleteRecipe = async (recipeid) => {
   }
 }
 
-
-
-
-
-
-
-// export const __EditPost = async (formData, postid) => {
-//   try {
-//     const response = await ApiClient.put(`/posts/edit/${postid}`, formData)
-//     console.log(response.data)
-//     return response.data
-//   } catch (error) {
-//     throw error
-//   }
-// }

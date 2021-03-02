@@ -25,15 +25,11 @@ export default class RecipeDetails extends Component {
   getRecipeDetails = async () => {
     const data = await __GetRecipe(this.props.match.params.recipe_id)
     this.setState({ recipe: data, reviews: data.reviews })
-    console.log('STATE', this.state.reviews)
   }
 
   delete = async (recipeId) => {
     try {
-      console.log('THE FIRST ONE', recipeId)
       await __DeleteRecipe(recipeId)
-      console.log('THE SECOND ONE', recipeId)
-
       this.props.history.push(`/`)
     } catch (error) {
       console.log(error)

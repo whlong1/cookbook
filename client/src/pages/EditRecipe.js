@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import TextInput from '../components/TextInput'
-import '../styles/AddRecipe.css'
 import {__GetRecipe, __UpdateRecipe} from '../services/RecipeService'
+import '../styles/AddRecipe.css'
 
 
 export default class EditRecipe extends Component {
@@ -26,9 +26,6 @@ export default class EditRecipe extends Component {
     getRecipe = async () => {
         try {
             const data = await __GetRecipe(this.props.match.params.recipe_id)
-            console.log(this.props)
-            console.log('DATA', data)
-            // this.setState({recipe: data.recipe})
             this.setState({
                 title: data.title,
                 author: data.author,
@@ -37,7 +34,6 @@ export default class EditRecipe extends Component {
                 image: data.image,
                 style: data.style
             })
-            console.log(data)
         } catch (error) {
             console.log(error)
         }
@@ -64,7 +60,6 @@ export default class EditRecipe extends Component {
 
     render() {
       const {title, author, prep_time, description, image, style} = this.state
-      console.log(this.state)
       return (
         <div>
           <button onClick={() => this.props.history.push(`/`)}>HOME</button>

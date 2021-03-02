@@ -17,7 +17,6 @@ export default class Signup extends Component {
 
   handleChange = ({target}) => {
     this.setState({[target.name]: target.value})
-    console.log(this.state)
   }
 
   handleSubmit = async (event) => {

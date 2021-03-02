@@ -3,8 +3,6 @@ import {NavLink} from 'react-router-dom'
 
 
 export default ({className, authenticated}) => {
-  console.log(authenticated)
-
 
   return authenticated ? (
 

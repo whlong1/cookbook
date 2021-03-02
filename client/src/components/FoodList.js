@@ -21,7 +21,7 @@ export default () => {
 
 
   const showButton = e => {
-    e.preventDefault();
+    e.preventDefault()
     switch (e.target.title) {
       case "Health Food":
         setD1('visible')
@@ -47,7 +47,7 @@ export default () => {
   }
 
   const hideOverlay = e => {
-    e.preventDefault();
+    e.preventDefault()
     setD1('invisible')
     setD2('invisible')
     setD3('invisible')
@@ -59,12 +59,7 @@ export default () => {
   return (
     <div className="listcontainer">
 
-
-      <div className="titleContainer">
-        <h1 className="samplePlateTitle">Cuisine</h1>
-        <p>Lorem ipsum dolore ipsum emit dolore ipsum.</p>
-      </div>
-
+      <div className="titleContainer"></div>
 
       <div className="plateContainer">
 

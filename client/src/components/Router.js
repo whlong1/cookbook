@@ -33,7 +33,6 @@ verifyTokenValid = async () => {
     if (token) {
       try {
         const session = await __CheckSession()
-        console.log('session', session)
         this.setState(
           {
             currentUser: session.user,
