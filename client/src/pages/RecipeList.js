@@ -48,13 +48,6 @@ render() {
             />
           ))}
         </div>
-
-        <div className="rightSide">
-            <img 
-              className="pagePhoto" 
-              src={Panel}
-            ></img>
-        </div>
       </div>
     </div>
   )

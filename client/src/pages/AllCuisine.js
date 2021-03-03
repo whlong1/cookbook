@@ -36,7 +36,7 @@ render() {
     <div className="pageLayout">
       <div className="pageSpread">
       <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
-        <div className="leftSide">
+        <div className="cardContainer">
           {cuisine.map((cuisine) => (
             <CuisineCard
               key={cuisine._id}
@@ -46,9 +46,8 @@ render() {
             />
           ))}
         </div>
-        <div className="rightSide">
-          <img className="pagePhoto" src={Panel}></img>
-        </div>
+
+        
       </div>
     </div>
   )
