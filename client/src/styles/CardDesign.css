@@ -1,0 +1,47 @@
+.card{
+    display: grid;
+    /* width: 25vw;
+    height: 25vw; */
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 210px;
+    grid-template-areas: "image" "text";
+    text-align: center;
+
+
+    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    width: 200px;
+    margin: 15px; */
+
+
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    /* position: relative;
+    text-align: center; */
+}
+
+.card-image {
+    grid-area: image;
+    background-size: cover;
+}
+
+.card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card-text {
+    grid-area: text;
+}
+
+.card-text h3 {
+    font-size: 1rem;
+}
+
+.card-text p {
+    font-size: 1rem;
+
+}

@@ -1,4 +1,4 @@
-.card{
+/* .card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,17 +77,8 @@ h3{
 
 
 
-
-
-
-
-
-
-
-
-
 @media (max-width: 800px) {
     .card {
         width: 2px;
     }
-}
+} */
