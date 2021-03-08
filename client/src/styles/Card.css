@@ -86,3 +86,8 @@ h3{
 
 
 
+@media (max-width: 800px) {
+    .card {
+        width: 2px;
+    }
+}

@@ -1,12 +1,6 @@
-html{
-   width: 100vw;
-   height: 100vh !important;
-   overflow: hidden;
-
-}
-
 body{
    margin: 0;
+   overflow: hidden;
 }
 
 .homepage {
@@ -69,4 +63,31 @@ a:hover, a:visited, a:link, a:active
    font-weight: 500;
    font-style: normal;
    color: black;
+}
+
+
+@media (max-width: 1000px) {
+   body{
+      margin: 0;
+   }
+   .homepage-left{
+      background-color: red;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .homepage-right{
+      width: 0;
+      display: flex;
+      opacity: 0;
+   }
+   nav {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      font-family: 'canada-type-gibson', sans-serif;
+   }   
 }

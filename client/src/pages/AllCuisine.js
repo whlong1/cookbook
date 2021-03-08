@@ -19,6 +19,7 @@ componentDidMount() {
 }
 
 
+
 getAll = async () => {
   try {
     const data = await __GetAllCuisine(this.props.match.params.cuisine)
