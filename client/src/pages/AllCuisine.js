@@ -32,6 +32,7 @@ getAll = async () => {
 
 
 render() {
+  console.log(this.state.cuisine)
   const {cuisine} = this.state
   return (
     <div className="pageLayout">
