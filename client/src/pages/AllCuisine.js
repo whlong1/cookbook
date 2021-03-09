@@ -24,6 +24,7 @@ getAll = async () => {
   try {
     const data = await __GetAllCuisine(this.props.match.params.cuisine)
     this.setState({cuisine: data.cuisine})
+    console.log(data)
   } catch (error) {
     console.log(error)
   }

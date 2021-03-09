@@ -51,6 +51,7 @@ export default class RecipeDetails extends Component {
   }
 
   render() {
+    console.log(this.state.recipe)
     const { recipe, review, reviews, text } = this.state
     if (this.state.recipe) {
       return (

@@ -1,4 +1,5 @@
 const Cuisine = require('../models/Cuisine');
+const Recipe = require('../models/Recipe');
 
 const AddCuisine = async (request, response) => {
     try {

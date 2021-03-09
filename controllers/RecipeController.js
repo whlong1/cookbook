@@ -1,9 +1,19 @@
+const Cuisine = require('../models/Cuisine');
 const Recipe = require('../models/Recipe');
 
 const AddRecipe = async (request, response) => {
     try {
         const recipe = await new Recipe(request.body)
+        console.log(request)
         recipe.save()
+        // await Cusine.updateOne(
+        //     { _id: req.params.cuisine_id},
+        //     {
+        //       $push: {
+        //         recipes: recipe,
+        //       },
+        //     }
+        // )
         return response.status(201).json({
             recipe,
         });
@@ -11,6 +21,23 @@ const AddRecipe = async (request, response) => {
         return response.status(500).json({ error: error.message })
     }
 }
+
+
+//original
+
+//   const AddRecipe = async (request, response) => {
+//     try {
+//         const recipe = await new Recipe(request.body)
+//         recipe.save()
+//         return response.status(201).json({
+//             recipe,
+//         });
+//     } catch (error) {
+//         return response.status(500).json({ error: error.message })
+//     }
+// }
+
+
 
 const AllRecipes = async (request, response) => {
     try {
