@@ -107,6 +107,11 @@ Dwinawan for Paperpillar
 https://dribbble.com/shots/14441287--Exploration-Food-Website
 
 
+Icon Credits:
+
+Chef Icon
+Source: AdobeStock_307256093
+
 Photo Cedits:
 
 
