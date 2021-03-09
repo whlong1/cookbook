@@ -16,6 +16,7 @@ render() {
   const cuisine = this.props.cuisine
   return (
     <div className="pageLayout">
+      {this.props.cuisine ? 
       <div className="pageSpread">
       <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="cardContainer">
@@ -30,6 +31,11 @@ render() {
           ))}
         </div>        
       </div>
+      :
+      <div>Loading</div>
+      
+    }
+
     </div>
   )
 }
