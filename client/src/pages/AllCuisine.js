@@ -33,7 +33,7 @@ export default class AllCuisine extends Component {
             </div>
           </div>
           :
-          <div><LoadingScreen /></div>
+          <div><LoadingScreen cuisine={cuisine}/></div>
         }
       </div>
     )
