@@ -46,8 +46,6 @@ export default class AddRecipe extends Component {
     
     render() {
       const {title, author, prep_time, description, image, style} = this.state
-      console.log('STATE TRACKER', this.state)
-      console.log(this.props)
       return (
         <div>
           <button onClick={() => this.props.history.push(`/`)}>HOME</button>

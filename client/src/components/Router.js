@@ -23,7 +23,6 @@ class Router extends Component {
       pageLoading: true,
       authenticated: false,
       cuisine: []
-
     }
   }
 
@@ -38,7 +37,6 @@ class Router extends Component {
     try {
       const data = await __GetAllCuisine()
       this.setState({ cuisine: data.cuisine })
-      console.log(data)
     } catch (error) {
       console.log(error)
     }
