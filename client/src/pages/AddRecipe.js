@@ -11,7 +11,7 @@ export default class AddRecipe extends Component {
         author: '',
         prep_time: '',
         description: '',
-        image: '',
+        image: 'https://i.imgur.com/HnXleJ9.jpg',
         style: '',
         cuisine_id: ''
       }
