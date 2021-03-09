@@ -10,7 +10,7 @@ export default class LoadingScreen extends Component {
 
     return (
       <div className="loading">
-          <img src={LoadingIcon}></img>
+          <img className="iconOne" src={LoadingIcon}></img>
           <h1>Loading</h1>
       </div>
     )
