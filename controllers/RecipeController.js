@@ -5,18 +5,19 @@ const AddRecipe = async (request, response) => {
     try {
         const recipe = await new Recipe(request.body)
         console.log(request)
-        recipe.save()
-        // await Cusine.updateOne(
-        //     { _id: req.params.cuisine_id},
-        //     {
-        //       $push: {
-        //         recipes: recipe,
-        //       },
-        //     }
-        // )
+        await recipe.save()
+        await Cuisine.updateOne(
+            { _id: request.body.cuisine_id },
+            {
+              $push: {
+                recipes: recipe,
+              },
+            }
+        )
         return response.status(201).json({
             recipe,
         });
+        // response.send(recipe)
     } catch (error) {
         return response.status(500).json({ error: error.message })
     }
