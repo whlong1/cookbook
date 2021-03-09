@@ -116,7 +116,10 @@ class Router extends Component {
             <Route
               path="/home/recipes/add"
               component={(props) => (
-                <AddRecipe {...props} />
+                <AddRecipe
+                  {...props}
+                  cuisine={this.state.cuisine}
+                />
               )}
             />
             <Route
