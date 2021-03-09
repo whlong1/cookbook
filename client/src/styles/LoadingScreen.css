@@ -2,15 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
+
+.loadingText{
+    font-family: 'sybarite', serif !important;
+}
 
 .iconOne {
     
     height: 90px;
     width: 90px;
     border-radius: 1000px;
-    top: 0px;
+    top: 300px;
     position: absolute;
     
     
@@ -36,8 +43,8 @@
 
 @keyframes bounceAnimation {
     50% {
-    float: right;
-    top: 100px;
+    /* float: right; */
+    top: 325px;
     }
 }
 

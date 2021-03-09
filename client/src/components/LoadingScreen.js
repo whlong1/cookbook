@@ -14,19 +14,19 @@ export default class LoadingScreen extends Component {
         console.log(this.props)
 
         return (
-            <div className="loading">
+            <div className="loadingContainer">
                 {this.props.cuisine ?
-                    <div>
+                    <div className="loading">
                         {/* <img className="iconTwo" src={CutleryIcon}></img> */}
                         <img className="iconOne" src={HatIcon}></img>
-                        <h3>Loading Cuisine Count</h3>
+                        <h3 className="loadingText">Loading Cuisine Count</h3>
                     </div>
 
                     :
-                    <div>
+                    <div className="loading">
                         {/* <img className="iconTwo" src={CutleryIcon}></img> */}
                         <img className="iconOne" src={HatIcon}></img>
-                        <h3>Loading Recipe Count</h3>
+                        <h3 className="loadingText">Loading Recipe Count</h3>
                     </div>
 
                 }
