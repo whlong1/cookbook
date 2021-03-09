@@ -1,30 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
 import '../styles/CardDesign.css'
 
-const CuisineCard = ({ onClick, image, name }) => (
-  <div className="card" onClick={onClick}>
-    {/* <div className="banner">
-      <img src={image}></img>
-    </div>
-    <div className="details">
-      <div className="titleBox">
-        <div className="decBorder">
-          <h3>{name}</h3>
+
+export default class CuisineCard extends Component {
+
+
+  render() {
+
+    return (
+      <div className="card" onClick={this.props.onClick}>
+        <div className="card-image">
+          <img src={this.props.image}></img>
         </div>
+        <div className="card-text">
+          <h3>{this.props.name}</h3>
+          <p>Lorem ipsum dolore ipsum.</p>
+          <p>{this.props.recipes.length} Results</p>
+        </div>
+
+
+
       </div>
-    </div> */}
+    )
 
-    <div className="card-image">
-      <img src={image}></img>
-    </div>
-    <div className="card-text">
-      <h3>{name}</h3>
-      <p>Lorem ipsum dolore ipsum.</p>
-    </div>
+  }
+
+}
 
 
-
-  </div>
-)
-
-export default CuisineCard

@@ -12,6 +12,9 @@ export default class AllCuisine extends Component {
 
 
 render() {
+  // const recipes
+
+
   console.log(this.props.cuisine)
   const cuisine = this.props.cuisine
   return (
@@ -25,6 +28,7 @@ render() {
               onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine.name}`)}
               name={cuisine.name}
               image={cuisine.image}
+              recipes={cuisine.recipes}
             />
           ))}
         </div>
