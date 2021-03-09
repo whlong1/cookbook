@@ -18,7 +18,18 @@ export default class AddRecipe extends Component {
     }
   
     handleChange = ({target}) => {
-      this.setState({[target.name]: target.value})
+      let cuisineList = this.props.cuisine
+      
+      if (target.name === 'style'){
+        this.setState({[target.name]: target.value})
+        for (let i = 0; i < cuisineList.length; i++){
+          if (cuisineList[i].name === target.value){
+            this.setState({cuisine_id: cuisineList[i]._id})
+          }
+        }
+      } else {
+        this.setState({[target.name]: target.value})
+      }
     }
   
     handleSubmit = async (event) => {
@@ -34,7 +45,7 @@ export default class AddRecipe extends Component {
     
     render() {
       const {title, author, prep_time, description, image, style} = this.state
-      console.log(this.state)
+      console.log('STATE TRACKER', this.state)
       console.log(this.props)
       return (
         <div>
