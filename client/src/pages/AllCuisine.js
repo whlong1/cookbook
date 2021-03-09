@@ -12,9 +12,6 @@ export default class AllCuisine extends Component {
 
 
 render() {
-  // const recipes
-
-
   console.log(this.props.cuisine)
   const cuisine = this.props.cuisine
   return (
@@ -31,9 +28,7 @@ render() {
               recipes={cuisine.recipes}
             />
           ))}
-        </div>
-
-        
+        </div>        
       </div>
     </div>
   )

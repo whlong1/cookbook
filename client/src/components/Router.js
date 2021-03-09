@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
+
 import Home from '../pages/Home'
 import Signup from '../pages/SignUp'
 import Signin from '../pages/SignIn'
 
 import { __CheckSession } from '../services/UserService'
+import { __GetAllCuisine } from '../services/CuisineService'
 
 import RecipeList from '../pages/RecipeList'
 import RecipeDetails from '../pages/RecipeDetails'
@@ -13,11 +15,6 @@ import EditRecipe from '../pages/EditRecipe'
 import AllCuisine from '../pages/AllCuisine'
 
 
-//new updates
-
-import { __GetAllCuisine } from '../services/CuisineService'
-
-//
 
 class Router extends Component {
   constructor() {

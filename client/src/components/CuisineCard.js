@@ -17,9 +17,6 @@ export default class CuisineCard extends Component {
           <p>Lorem ipsum dolore ipsum.</p>
           <p>{this.props.recipes.length} Results</p>
         </div>
-
-
-
       </div>
     )
 

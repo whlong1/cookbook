@@ -16,27 +16,11 @@ const AddRecipe = async (request, response) => {
         )
         return response.status(201).json({
             recipe,
-        });
-        // response.send(recipe)
+        })
     } catch (error) {
         return response.status(500).json({ error: error.message })
     }
 }
-
-
-//original
-
-//   const AddRecipe = async (request, response) => {
-//     try {
-//         const recipe = await new Recipe(request.body)
-//         recipe.save()
-//         return response.status(201).json({
-//             recipe,
-//         });
-//     } catch (error) {
-//         return response.status(500).json({ error: error.message })
-//     }
-// }
 
 
 
