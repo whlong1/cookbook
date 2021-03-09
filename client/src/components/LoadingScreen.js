@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/LoadingScreen.css'
-import LoadingIcon from '../assets/Chef-01.png'
+import CutleryIcon from '../assets/Cutlery.png'
+import HatIcon from '../assets/Hat.png'
 
 
 export default class LoadingScreen extends Component {
@@ -10,7 +11,8 @@ export default class LoadingScreen extends Component {
 
     return (
       <div className="loading">
-          <img className="iconOne" src={LoadingIcon}></img>
+          <img className="iconTwo" src={CutleryIcon}></img>
+          <img className="iconOne" src={HatIcon}></img>
           <h1>Loading</h1>
       </div>
     )
