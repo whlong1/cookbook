@@ -21,9 +21,10 @@ export default class AddRecipe extends Component {
       let cuisineList = this.props.cuisine
       
       if (target.name === 'style'){
-        this.setState({[target.name]: target.value})
+        let styleName = target.value.toUpperCase()
+        this.setState({[target.name]: styleName})
         for (let i = 0; i < cuisineList.length; i++){
-          if (cuisineList[i].name === target.value){
+          if (cuisineList[i].name === target.value || cuisineList[i].name === styleName ){
             this.setState({cuisine_id: cuisineList[i]._id})
           }
         }
