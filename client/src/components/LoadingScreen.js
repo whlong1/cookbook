@@ -4,6 +4,9 @@ import CutleryIcon from '../assets/Cutlery.png'
 import HatIcon from '../assets/Hat.png'
 
 
+
+
+
 export default class LoadingScreen extends Component {
 
 
