@@ -1,40 +1,19 @@
 import React, {Component} from 'react'
-import {__GetAllCuisine} from '../services/CuisineService'
+
 
 import '../styles/ListPages.css'
-import Panel from '../assets/panels4.jpg'
+// import Panel from '../assets/panels4.jpg'
 
 import CuisineCard from '../components/CuisineCard'
 
 export default class AllCuisine extends Component {
-  constructor() {
-    super()
-    this.state = {
-      cuisine: [],
-    }
-  }
 
-componentDidMount() {
-  this.getAll()
-}
-
-
-
-getAll = async () => {
-  try {
-    const data = await __GetAllCuisine(this.props.match.params.cuisine)
-    this.setState({cuisine: data.cuisine})
-    console.log(data)
-  } catch (error) {
-    console.log(error)
-  }
-}
 
 
 
 render() {
-  console.log(this.state.cuisine)
-  const {cuisine} = this.state
+  console.log(this.props.cuisine)
+  const cuisine = this.props.cuisine
   return (
     <div className="pageLayout">
       <div className="pageSpread">
