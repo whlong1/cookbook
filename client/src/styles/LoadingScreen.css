@@ -17,6 +17,7 @@
   height: 90px;
   width: 90px;
   border-radius: 1000px;
+  opacity: .50;
 
   animation: bounceAnimation 1s infinite;
 }
@@ -24,10 +25,7 @@
 
 
 
-
-
-
 @keyframes bounceAnimation {
-  50% {transform: translateY(-30px);} 
+  50% {transform: translateY(-30px)};
 }
 
