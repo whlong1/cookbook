@@ -18,7 +18,7 @@ export default class AllCuisine extends Component {
       <div className="pageLayout">
         {this.props.cuisine.length ?
           <div className="pageSpread">
-            <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
+            {/* <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button> */}
             <div className="cardContainer">
               {cuisine.map((cuisine) => (
                 <CuisineCard

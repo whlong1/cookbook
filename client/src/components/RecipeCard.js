@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Card.css'
+import '../styles/CardDesign.css'
 
 const RecipeCard = ({onClick, image, title, author}) => (
   <div className="card" onClick={onClick}>
