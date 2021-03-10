@@ -14,6 +14,7 @@ import AddRecipe from '../pages/AddRecipe'
 import EditRecipe from '../pages/EditRecipe'
 import AllCuisine from '../pages/AllCuisine'
 import LoadingScreen from '../components/LoadingScreen'
+import NavBar from '../components/NavBar'
 
 
 
@@ -79,6 +80,7 @@ class Router extends Component {
   render() {
     return (
       <main>
+        <NavBar></NavBar>
         {this.state.pageLoading ? (
           <LoadingScreen/>
         ) : (

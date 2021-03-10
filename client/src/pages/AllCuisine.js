@@ -13,10 +13,10 @@ export default class AllCuisine extends Component {
   render() {
     console.log(this.props)
     const cuisine = this.props.cuisine
-    const pageLoading =  this.props.pageLoading
+    const pageLoading = this.props.pageLoading
     return (
       <div className="pageLayout">
-        {this.props.cuisine.length && pageLoading === false ?
+        {this.props.cuisine.length ?
           <div className="pageSpread">
             <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
             <div className="cardContainer">
