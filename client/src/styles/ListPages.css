@@ -13,14 +13,20 @@
     position: relative;
     display: flex;
     margin-top: 75px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    justify-content: center;
  }
 
 
  .cardContainer{
    display: flex;
-   flex-wrap: wrap;
+   width: auto;   
+   flex-flow: row wrap;
+   justify-content: center;
+
+
    margin: 0 auto;
-   /* flex-direction: row; */
  }
 
 
