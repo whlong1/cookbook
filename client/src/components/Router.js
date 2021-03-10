@@ -80,72 +80,75 @@ class Router extends Component {
   render() {
     return (
       <main>
-        <NavBar></NavBar>
+
         {this.state.pageLoading ? (
-          <LoadingScreen/>
+          <LoadingScreen />
         ) : (
           <Switch>
-            <Route
-              exact path="/"
-              component={(props) => (
-                <Home {...props}
-                  authenticated={this.state.authenticated}
-                >
-                </Home>
-              )}
-            />
-            <Route
-              path="/signup"
-              component={(props) => (
-                <Signup {...props}></Signup>
-              )}
-            />
-            <Route
-              path="/login"
-              component={(props) => (
-                <Signin {...props}
-                  toggleAuthenticated={this.toggleAuthenticated}
-                ></Signin>
-              )}
-            />
-            <Route
-              path="/home/recipes/sort/:style"
-              component={(props) => (
-                <RecipeList {...props} />
-              )}
-            />
-            <Route
-              path="/home/recipes/get/:recipe_id"
-              component={(props) => (
-                <RecipeDetails {...props} />
-              )}
-            />
-            <Route
-              path="/home/recipes/add"
-              component={(props) => (
-                <AddRecipe
-                  {...props}
-                  cuisine={this.state.cuisine}
-                />
-              )}
-            />
-            <Route
-              path="/home/recipes/edit/:recipe_id"
-              component={(props) => (
-                <EditRecipe {...props} />
-              )}
-            />
-            <Route
-              path="/home/cuisine/all"
-              component={(props) => (
-                <AllCuisine
-                  {...props}
-                  cuisine={this.state.cuisine}
-                  pageLoading={this.state.pageLoading}
-                  loadTime={this.loadTime}
-                />
-              )}
-            />
+              <Route
+                exact path="/"
+                component={(props) => (
+                  <Home {...props}
+                    authenticated={this.state.authenticated}
+                  ></Home>
+                )}
+              />
+            <div>
+              <NavBar></NavBar>
+
+              <Route
+                path="/signup"
+                component={(props) => (
+                  <Signup {...props}></Signup>
+                )}
+              />
+              <Route
+                path="/login"
+                component={(props) => (
+                  <Signin {...props}
+                    toggleAuthenticated={this.toggleAuthenticated}
+                  ></Signin>
+                )}
+              />
+              <Route
+                path="/home/recipes/sort/:style"
+                component={(props) => (
+                  <RecipeList {...props} />
+                )}
+              />
+              <Route
+                path="/home/recipes/get/:recipe_id"
+                component={(props) => (
+                  <RecipeDetails {...props} />
+                )}
+              />
+              <Route
+                path="/home/recipes/add"
+                component={(props) => (
+                  <AddRecipe
+                    {...props}
+                    cuisine={this.state.cuisine}
+                  />
+                )}
+              />
+              <Route
+                path="/home/recipes/edit/:recipe_id"
+                component={(props) => (
+                  <EditRecipe {...props} />
+                )}
+              />
+              <Route
+                path="/home/cuisine/all"
+                component={(props) => (
+                  <AllCuisine
+                    {...props}
+                    cuisine={this.state.cuisine}
+                    pageLoading={this.state.pageLoading}
+                    loadTime={this.loadTime}
+                  />
+                )}
+              />
+            </div>
           </Switch>
         )}
       </main>
