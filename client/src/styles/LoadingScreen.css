@@ -1,10 +1,10 @@
 .loading{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 
@@ -12,49 +12,22 @@
     font-family: 'sybarite', serif !important;
 }
 
+
 .iconOne {
-    
-    height: 90px;
-    width: 90px;
-    border-radius: 1000px;
-    top: 300px;
-    position: absolute;
-    
-    
-    
-    animation: bounceAnimation 1s infinite;
+  height: 90px;
+  width: 90px;
+  border-radius: 1000px;
 
-  }
-
-  .iconTwo{
-
-
-    height: 90px;
-    width: 90px;
-
-
-
-    animation: spinEffect infinite 5s linear;
-    /* option 2 */
-    /* animation: spinEffect 5s infinite; */
-
-  }
-
-
-@keyframes bounceAnimation {
-    50% {
-    /* float: right; */
-    top: 325px;
-    }
+  animation: bounceAnimation 1s infinite;
 }
 
 
 
-@keyframes spinEffect {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+
+
+
+
+@keyframes bounceAnimation {
+  50% {transform: translateY(-30px);} 
+}
+
