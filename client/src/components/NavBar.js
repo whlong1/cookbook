@@ -10,9 +10,9 @@ export default ({ className, authenticated }) => {
 
         <header className="navBar">
             <nav>
-                {/* <NavLink activeClassName="nav" to="/"><p className="homeLinks">SIGN OUT</p></NavLink>
-        <NavLink activeClassName="nav" to="/home/recipes/add"><p className="homeLinks">ADD RECIPE</p></NavLink>
-        <NavLink activeClassName="nav" to="/home/cuisine/all"><p className="homeLinks">BROWSE CUISINE</p></NavLink> */}
+                <NavLink activeClassName="nav" to="/"><p>SIGN OUT</p></NavLink>
+                <NavLink activeClassName="nav" to="/home/recipes/add"><p>ADD RECIPE</p></NavLink>
+                <NavLink activeClassName="nav" to="/home/cuisine/all"><p>BROWSE CUISINE</p></NavLink>
             </nav>
         </header>
 
@@ -20,9 +20,10 @@ export default ({ className, authenticated }) => {
 
         <header className="navBar">
             <nav>
-                {/* <NavLink activeClassName="nav" to="/signup"><p className="homeLinks">SIGN UP</p></NavLink>
-      <NavLink activeClassName="nav" to="/login"><p className="homeLinks">SIGN IN</p></NavLink>
-      <NavLink activeClassName="nav" to="/home/cuisine/all"><p className="homeLinks">BROWSE CUISINE</p></NavLink> */}
+                <NavLink activeClassName="nav" to="/"><p>HOME</p></NavLink>
+                <NavLink activeClassName="nav" to="/signup"><p>SIGN UP</p></NavLink>
+                <NavLink activeClassName="nav" to="/login"><p>SIGN IN</p></NavLink>
+                <NavLink activeClassName="nav" to="/home/cuisine/all"><p>BROWSE CUISINE</p></NavLink>
             </nav>
         </header>
     )
