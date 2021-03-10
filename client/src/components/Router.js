@@ -13,6 +13,7 @@ import RecipeDetails from '../pages/RecipeDetails'
 import AddRecipe from '../pages/AddRecipe'
 import EditRecipe from '../pages/EditRecipe'
 import AllCuisine from '../pages/AllCuisine'
+import LoadingScreen from '../components/LoadingScreen'
 
 
 
@@ -26,9 +27,14 @@ class Router extends Component {
     }
   }
 
+
+
   componentDidMount() {
     this.verifyTokenValid()
-    this.setState({ pageLoading: false })
+    setTimeout(() => {
+      console.log('hello')
+      this.setState({ pageLoading: false })
+    }, 2000);
     this.getAll()
   }
 
@@ -65,12 +71,16 @@ class Router extends Component {
     this.setState({ authenticated: true })
   }
 
+  loadTime = (value) => {
+    this.setState({ pageLoading: false })
+  }
+
 
   render() {
     return (
       <main>
         {this.state.pageLoading ? (
-          <h3>Loading...</h3>
+          <LoadingScreen/>
         ) : (
           <Switch>
             <Route
@@ -129,6 +139,8 @@ class Router extends Component {
                 <AllCuisine
                   {...props}
                   cuisine={this.state.cuisine}
+                  pageLoading={this.state.pageLoading}
+                  loadTime={this.loadTime}
                 />
               )}
             />

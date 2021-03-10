@@ -19,14 +19,24 @@ export default class LoadingScreen extends Component {
                     <div className="loading">
                         {/* <img className="iconTwo" src={CutleryIcon}></img> */}
                         <img className="iconOne" src={HatIcon}></img>
-                        <h3 className="loadingText">Loading Cuisine Count</h3>
+                        <h3 className="loadingText">Preparing Your Menu</h3>
                     </div>
 
                     :
-                    <div className="loading">
-                        {/* <img className="iconTwo" src={CutleryIcon}></img> */}
-                        <img className="iconOne" src={HatIcon}></img>
-                        <h3 className="loadingText">Loading Recipe Count</h3>
+                    <div>
+                        {this.props.recipes ?
+                            <div className="loading">
+                                {/* <img className="iconTwo" src={CutleryIcon}></img> */}
+                                <img className="iconOne" src={HatIcon}></img>
+                                <h3 className="loadingText">Finding Recipes</h3>
+                            </div>
+                            :
+                            <div className="loading">
+                            {/* <img className="iconTwo" src={CutleryIcon}></img> */}
+                            <img className="iconOne" src={HatIcon}></img>
+                            <h3 className="loadingText">Preparing Your Menu</h3>
+                        </div>
+                        }
                     </div>
 
                 }
