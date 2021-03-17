@@ -10,18 +10,21 @@
     height: 220px;
     width: 220px;
 
-
     margin-top: 0;
     margin-bottom: 0;
     margin: 10px;
 
     cursor: pointer;
-
-    
-
-
-
 }
+
+
+.borderLine{
+    width: 100%;
+    height: .5px;
+    opacity: 25%;
+    background-color: black;
+}
+
 
 .card-image {
     grid-area: image;

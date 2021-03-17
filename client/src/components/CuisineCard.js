@@ -14,6 +14,7 @@ export default class CuisineCard extends Component {
         </div>
         <div className="card-text">
           <h3>{this.props.name}</h3>
+          <div className="borderLine"></div>
           <p>Lorem ipsum dolore ipsum.</p>
           <p>{this.props.recipes.length} Results</p>
         </div>
