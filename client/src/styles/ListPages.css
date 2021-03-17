@@ -16,18 +16,30 @@
     padding-left: 4vw;
     padding-right: 4vw;
     justify-content: center;
+    width: 100%;
  }
 
 
  .cardContainer{
-   display: flex;
-   width: auto;   
-   flex-flow: row wrap;
-   justify-content: center;
 
 
-   margin: 0 auto;
+   display:flex;
+   
+   gap: .25%;
+
+   flex-wrap: wrap;
+
  }
+
+ .cardContainer::after {
+  content: "";
+  flex: auto;
+  justify-content: left;
+  width: 220px;
+
+
+
+}
 
 
   
