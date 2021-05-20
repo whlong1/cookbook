@@ -6,7 +6,7 @@ export default class CuisineCard extends Component {
 
 
   render() {
-
+   
     return (
       <div className="card" onClick={this.props.onClick}>
         <div className="card-image">
@@ -15,8 +15,8 @@ export default class CuisineCard extends Component {
         <div className="card-text">
           <h3>{this.props.name}</h3>
           <div className="borderLine"></div>
-          <p>Lorem ipsum dolore ipsum.</p>
-          <p>{this.props.recipes.length} Results</p>
+          {/* <p>Lorem ipsum dolore ipsum.</p> */}
+          <p style={{marginTop:'11px', fontSize:'11px', opacity:'.5'}}>{this.props.recipes.length} Results</p>
         </div>
       </div>
     )

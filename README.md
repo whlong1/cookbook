@@ -6,7 +6,6 @@
 
 [GitHub](https://github.com/whlong1)
 
-[Deployed Link](https://cookbook-project-two.herokuapp.com/) 
 *** 
 
 ### Overview
