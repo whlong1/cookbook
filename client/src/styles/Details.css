@@ -3,7 +3,6 @@
 	display: flex;
 }
 
-
 .backButtonRd {
     padding: 5px;
     color: black;
@@ -31,13 +30,11 @@
 	width: 52%;    
 }
 
-  .pagePhotoD {
-    margin: 0 auto;
-    margin-left: 15px;
-  }
+.pagePhotoD {
+	margin: 0 auto;
+	margin-left: 15px;
+}
   
-
-
 .recipeHeaderD {
     display: flex;
     width: 100%;

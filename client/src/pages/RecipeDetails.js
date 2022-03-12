@@ -59,6 +59,9 @@ export default class RecipeDetails extends Component {
       height: "108vh",
       width: "100%",
     }
+
+    const recentReviews = recipe?.reviews.length && recipe.reviews.reverse().slice(0, 6)
+    
     if (this.state.recipe) {
       return (
         <>
@@ -108,8 +111,8 @@ export default class RecipeDetails extends Component {
                   <p className="rTitle">User Reviews</p>
                 </div>
                 <div className="reviewListD">
-                  {recipe.reviews.length ? (
-                    recipe.reviews.map((review) => (
+                  {recentReviews.length ? (
+                    recentReviews.map((review) => (
                       <div className="reviewBlockD" key={review._id}>
                         <ReviewCard
                           key={review._id}
@@ -126,7 +129,7 @@ export default class RecipeDetails extends Component {
                     <TextInput
                       className="typeHereD"
                       fieldType="textfield"
-                      placeholder=""
+                      placeholder="Leave a Review"
                       name="text"
                       value={text}
                       onChange={this.handleChange}
