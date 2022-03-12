@@ -1,17 +1,12 @@
 .plate {
-
     width: 13vw;
     height: 13vw;
-
     margin: 25px !important;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     max-width: 200px;
     max-height: 200px;
-
 }
 
 .plateImg {
@@ -21,28 +16,21 @@
     height: 99%;
 }
 
-
 .listcontainer{
     width: 100%;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-
 }
 
 .plateContainer{
     width: 100%;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .titleContainer{
@@ -50,30 +38,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     height: 25%;
-
 }
 
 .bottomBlock{
     height: 25%;
 }
 
-
-
-
 .samplePlateTitle {
     font-size: 1.5rem;
     font-family: 'sybarite', serif !important;
     margin: 0;
-
 }
-
 
 .columnA{
     display: flex;
     flex-direction: column;
-
 }
 
 .columnB{
@@ -81,40 +61,30 @@
     flex-direction: column;
 }
 
-
-
-
 .productbox {
     display: flex;
     margin: auto;
     height: 240px;
     width: 240px;
 }
-  
+
 .invisible {
     display: none;
 }
-  
+
 .visible {
-
     width: 11vw;
-
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
     margin: 0 auto;
     position: absolute;
-    
     font-family: 'sybarite', serif !important;
     font-size: 1.2rem;
-    
-    
     border: none;
     background: rgba(233, 237, 239, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.75);
     backdrop-filter: blur( 1px );
     box-shadow: 0 8px 32px 0 rgba(100, 115, 123, 0.4);
-
 }
-  

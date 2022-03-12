@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
-
 import { __GetListByStyle } from '../services/RecipeService'
 import RecipeCard from '../components/RecipeCard'
-
 import '../styles/ListPages.css'
-
 import LoadingScreen from '../components/LoadingScreen'
-
-import Panel from '../assets/panels3.jpg'
-
-
 
 export default class RecipeList extends Component {
   constructor() {
@@ -17,7 +10,6 @@ export default class RecipeList extends Component {
     this.state = {
       recipes: [],
     }
-
   }
 
   componentDidMount() {
@@ -33,14 +25,11 @@ export default class RecipeList extends Component {
     }
   }
 
-
-
   render() {
     const { recipes } = this.state
     return (
       <div className="pageLayout">
         {this.state.recipes.length ?
-
           <div className="pageSpread">
             <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
             <div className="leftSide">
@@ -55,14 +44,9 @@ export default class RecipeList extends Component {
               ))}
             </div>
           </div>
-
           :
           <div><LoadingScreen recipes={recipes} /></div>
-
         }
-
-
-
       </div>
     )
   }

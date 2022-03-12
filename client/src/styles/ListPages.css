@@ -8,7 +8,6 @@
   background-color: #f7f9fb;
 }
 
-
 .pageSpread {
     position: relative;
     display: flex;
@@ -17,42 +16,39 @@
     padding-right: 4vw;
     justify-content: center;
     width: 100%;
- }
+}
 
 
- .cardContainer{
-   display:flex;
-   gap: .25%;
-   flex-wrap: wrap;
+.cardContainer{
+  display:flex;
+  gap: .25%;
+  flex-wrap: wrap;
+}
 
- }
-
- .cardContainer::after {
+.cardContainer::after {
   content: "";
   flex: auto;
   justify-content: left;
   width: 220px;
 }
 
+.pagePhoto {
+  margin-left: 22px;
+}
 
-  .pagePhoto {
-    margin-left: 22px;
-  }
-  
-  .backButtonL {
-
-    margin: 10px;
-    padding: 0;
-    padding: 5px;
-    color: black;
-    background: none;
-    font-family: 'canada-type-gibson', sans-serif;
-    font-size: 10pt;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    font-style: normal;
-    margin-bottom: 40px;
-    margin-left: 10px;
+.backButtonL {
+  margin: 10px;
+  padding: 0;
+  padding: 5px;
+  color: black;
+  background: none;
+  font-family: 'canada-type-gibson', sans-serif;
+  font-size: 10pt;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 40px;
+  margin-left: 10px;
 }
 

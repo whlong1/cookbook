@@ -46,7 +46,6 @@ export default () => {
     }
   }
 
-
   const hideOverlay = e => {
     e.preventDefault()
     setD1('invisible')
@@ -59,54 +58,38 @@ export default () => {
 
   return (
     <div className="listcontainer">
-
-
       <div className="titleContainer"></div>
-
       <div className="plateContainer">
-
         <div className="columnA">
-
           <Link className="plate" to="/home/recipes/sort/HEALTHY" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d1}>Health Food</button>
             <img className="plateImg" title="Health Food" src={Plate1} alt="avocado toast"/>
           </Link>
-
           <Link className="plate" to="/home/recipes/sort/BREAKFAST" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d2}>Breakfast</button>
             <img className="plateImg"  title="Breakfast" src={Plate2} alt="pancakes"/>
           </Link>
-
           <Link className="plate" to="/home/recipes/sort/PASTA" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d3}>Pasta</button>
             <img className="plateImg"  title="Pasta" src={Plate3} alt="pasta"/>
           </Link>
-
         </div>
-
         <div className="columnB">
-
           <Link className="plate" to="/home/recipes/sort/CURRY" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d4}>Curry</button>
             <img className="plateImg"  title="Curry" src={Plate4} alt="curry"/>
           </Link>
-
           <Link className="plate" to="/home/recipes/sort/SALAD" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d5}>Salad</button>
             <img className="plateImg"  title="Salad" src={Plate5} alt="salad"/>
           </Link>
-
           <Link className="plate" to="/home/recipes/sort/DESSERT" onMouseEnter={e => showButton(e)} onMouseLeave={e => hideOverlay(e)}>
             <button className={d6}>Dessert</button>
             <img className="plateImg"  title="Dessert" src={Plate6} alt="cake"/>
           </Link>
-
         </div>
-
       </div>
-
       <div className="bottomBlock"></div>
-
     </div>
   )
 }

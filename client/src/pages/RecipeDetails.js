@@ -3,7 +3,7 @@ import '../styles/Details.css'
 
 import { __GetRecipe } from '../services/RecipeService'
 import { __DeleteRecipe } from '../services/RecipeService'
-import {__AddReview} from '../services/ReviewService'
+import { __AddReview } from '../services/ReviewService'
 
 import TextInput from '../components/TextInput'
 import ReviewCard from '../components/ReviewCard'
@@ -36,8 +36,8 @@ export default class RecipeDetails extends Component {
     }
   }
 
-  handleChange = ({target}) => {
-    this.setState({[target.name]: target.value})
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value })
   }
 
   handleSubmit = async (event) => {
@@ -91,8 +91,8 @@ export default class RecipeDetails extends Component {
                       </div>
                     ))
                   ) : (
-                      <div></div>
-                    )}
+                    <div></div>
+                  )}
                 </div>
                 <div className="entryD">
                   <form className="formBoxD" onSubmit={this.handleSubmit}>
@@ -111,7 +111,7 @@ export default class RecipeDetails extends Component {
             </section>
             <section className="rightSideD">
               <div>
-                <img 
+                <img
                   className="pagePhotoD"
                   src={recipe.image} alt="an example of the current recipe" />
               </div>
@@ -123,3 +123,5 @@ export default class RecipeDetails extends Component {
     return <h6>LOADING</h6>
   }
 }
+
+

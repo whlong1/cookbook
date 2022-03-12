@@ -1,55 +1,74 @@
-.card{
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 70% 30%;
-    grid-template-areas: "image" "text";
-    text-align: center;
+.card {    
+    margin: 12px;
+    width: 205px;
+		height: 185px;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+		justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'canada-type-gibson', sans-serif;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    text-align: left;
-
-    height: 220px;
-    width: 220px;
-
-    margin-top: 0;
-    margin-bottom: 0;
-    margin: 10px;
-
-    cursor: pointer;
+		border: 1px solid white;
 }
 
-
-.borderLine{
-    width: 100%;
-    height: .5px;
-    opacity: 25%;
-    background-color: black;
-}
-
-
-.card-image {
-    grid-area: image;
-    background-size: cover;
-}
-
-.card-image img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+.card:hover{
+	cursor: pointer;
 }
 
 .card-text {
-    grid-area: text;
-    font-family: 'acumin-pro-extra-condensed', sans-serif;
-    padding: 5px 5px 5px 10px;
+		padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+		font-size: 1.5rem;
+		font-family: 'sybarite', serif !important;
+		margin: 0;
+		width: 99.7%;
+    margin: 0 auto;
+    font-family: 'sybarite', serif !important;
+    font-size: 1.2rem;
+    border: none;
+    background: rgba(238, 243, 245, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur( 1px );
+    box-shadow: 0 8px 32px 0 rgba(100, 115, 123, 0.4);
 }
 
-.card-text h3 {
-    font-size: 1.05rem;
-    margin: 0 auto;
+.card h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.card-text p {
-    font-size: .5rem;
-    margin: 0 auto;
+.card p {
+    opacity: .5;
+    margin: 0;
+}
 
+
+
+@media only screen and (max-width: 930px) {
+	.card {
+		width: 205px;
+		height: 185px;
+	}
+}
+
+/* mobile */
+@media only screen and (max-width: 390px) {
+	.card {
+		width: 94%;
+		height: 300px;
+	}
+
+	.card-text {
+		padding: 12px 0px;
+	}
+
+	.card h3 {
+		font-size: 1.5rem;
+}
 }

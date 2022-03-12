@@ -29,7 +29,6 @@ class Router extends Component {
   }
 
 
-
   componentDidMount() {
     this.verifyTokenValid()
     setTimeout(() => {
@@ -84,7 +83,9 @@ class Router extends Component {
         {this.state.pageLoading ? (
           <LoadingScreen />
         ) : (
-          <Switch>
+          <>
+            <NavBar></NavBar>
+            <Switch>
               <Route
                 exact path="/"
                 component={(props) => (
@@ -93,8 +94,6 @@ class Router extends Component {
                   ></Home>
                 )}
               />
-            <div>
-              <NavBar></NavBar>
 
               <Route
                 path="/signup"
@@ -148,8 +147,9 @@ class Router extends Component {
                   />
                 )}
               />
-            </div>
-          </Switch>
+
+            </Switch>
+          </>
         )}
       </main>
     )

@@ -2,11 +2,7 @@ const Router = require('express').Router()
 
 const UserController = require('../controllers/UserController')
 
-const {
-    createToken,
-    verifyToken,
-    getToken
-  } = require('../middleware/JwtHandler')
+const { createToken, verifyToken, getToken } = require('../middleware/JwtHandler')
 
 Router.post('/add', UserController.AddUser)
 //POST-> localhost:3001/home/users/add
@@ -24,11 +20,11 @@ Router.post('/login', UserController.SignInUser, createToken)
 //POST->localhost:3001/home/users/login
 
 Router.get(
-    '/refresh/session',
-    getToken,
-    verifyToken,
-    UserController.RefreshSession
-  )
+  '/refresh/session',
+  getToken,
+  verifyToken,
+  UserController.RefreshSession
+)
 
 module.exports = Router
 
