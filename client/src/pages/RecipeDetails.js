@@ -61,7 +61,7 @@ export default class RecipeDetails extends Component {
     }
     if (this.state.recipe) {
       return (
-        <div className="pageLayoutD">
+        <>
           <nav className="navigationD">
             <button className="backButtonRd" onClick={() => this.props.history.push('/')}>Home</button>
             <button className="backButtonRd" onClick={() => this.props.history.goBack()}>Back</button>
@@ -76,9 +76,30 @@ export default class RecipeDetails extends Component {
                 </div>
               </div>
               <div className="descriptionD">
-                <p>Author: {recipe.author}</p>
-                <p>Category: {recipe.style}</p>
-                <p>Preparation Time: {recipe.prep_time}</p>
+                <p>
+                  <span>
+                    Author:
+                  </span>
+                  <span>
+                    {recipe.author}
+                  </span>
+                </p>
+                <p>
+                  <span>
+                    Category:
+                  </span>
+                  <span>
+                    {recipe.style}
+                  </span>
+                </p>
+                <p>
+                  <span>
+                    Preparation Time:
+                  </span>
+                  <span>
+                    {recipe.prep_time}
+                  </span>
+                </p>
                 <p className="descripT">Description:</p>
                 <p className="blurb">{recipe.description}</p>
               </div>
@@ -120,7 +141,7 @@ export default class RecipeDetails extends Component {
               </div>
             </section>
           </div>
-        </div>
+        </>
       )
     }
     return <h6>LOADING</h6>

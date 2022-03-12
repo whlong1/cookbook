@@ -1,12 +1,7 @@
 .pageSpreadD {
-    width: 100%;
-    height: 80vh;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
- }
+	width: 100%;
+	display: flex;
+}
 
 
 .backButtonRd {
@@ -23,18 +18,18 @@
     margin-left: 10px;
 }
 
- .leftSideD {
-    width: 50%;
+.leftSideD {
+    width: 48%;
     display: table;
     table-layout: fixed;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 18px;
-  }
- 
-  .rightSideD {
-    width: 50%;    
-  }
+}
+
+.rightSideD {
+	width: 52%;    
+}
 
   .pagePhotoD {
     margin: 0 auto;
@@ -48,6 +43,7 @@
     width: 100%;
     height: 100%;
     background: none;
+		padding: 5px 0px 20px 0px;
     border-bottom: 1px solid #e1e1e1;
 }
 
@@ -56,7 +52,7 @@
     flex-direction: row;
     justify-content: right;
     align-items: center;
-    padding-left: 30vw;
+		width: 100%;
 }
 
 .uB {
@@ -71,9 +67,6 @@
     font-weight: 500;
     font-style: normal;
 }
-
-
-
 
 
 .recTitleD {
@@ -176,4 +169,10 @@ textarea {
 }
 
 
+p span:first-child {
+	font-weight: 500;
+}
 
+p span + span {
+	padding-left: 6px;
+}

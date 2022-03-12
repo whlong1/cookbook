@@ -78,7 +78,7 @@ class Router extends Component {
 
   render() {
     return (
-      <main>
+      <main style={{height: "100vh"}}>
 
         {this.state.pageLoading ? (
           <LoadingScreen />
