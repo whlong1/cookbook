@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import TextInput from '../components/TextInput'
-import {__LoginUser} from '../services/UserService'
+import { __LoginUser } from '../services/UserService'
 
 import '../styles/SignUp.css'
 import '../styles/Details.css'
@@ -16,15 +16,15 @@ export default class SignIn extends Component {
     }
   }
 
-  handleChange = ({target}) => {
-    this.setState({[target.name]: target.value, formError:false})
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value, formError: false })
   }
 
   handleSubmit = async (event) => {
     event.preventDefault()
     try {
       const loginData = await __LoginUser(this.state)
-      this.props.toggleAuthenticated(true)
+      this.props.toggleAuthenticated(true, loginData.user)
       this.props.history.push('/')
     } catch (error) {
       this.setState({ formError: true })
@@ -32,7 +32,7 @@ export default class SignIn extends Component {
   }
 
   render() {
-    const {email, password} = this.state
+    const { email, password } = this.state
     return (
       <div className="authLayout">
         <button className="backButtonS" onClick={() => this.props.history.goBack()}>Back</button>

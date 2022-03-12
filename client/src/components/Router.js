@@ -22,6 +22,7 @@ class Router extends Component {
     this.state = {
       pageLoading: true,
       authenticated: false,
+      currentUser: null,
       cuisine: []
     }
   }
@@ -63,8 +64,8 @@ class Router extends Component {
     }
   }
 
-  toggleAuthenticated = (value) => {
-    this.setState({ authenticated: true })
+  toggleAuthenticated = (value, user) => {
+    this.setState({ authenticated: value, currentUser: user })
   }
 
   loadTime = (value) => {
