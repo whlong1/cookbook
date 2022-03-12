@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import Signup from '../pages/SignUp'
@@ -46,10 +46,13 @@ class Router extends Component {
   }
 
   verifyTokenValid = async () => {
+    console.log('verify Token valid')
     const token = localStorage.getItem('token')
+    console.log(token)
     if (token) {
       try {
         const session = await __CheckSession()
+        console.log('SESSION',session)
         this.setState(
           {
             currentUser: session.user,
@@ -73,6 +76,8 @@ class Router extends Component {
   }
 
   render() {
+
+    console.log(this.state.currentUser)
     return (
       <main style={{ height: "100vh" }}>
         {this.state.pageLoading ? (
@@ -148,4 +153,4 @@ class Router extends Component {
     )
   }
 }
-export default Router
+export default withRouter(Router)
