@@ -32,7 +32,7 @@ export default class Signup extends Component {
   render() {
     const {name, email, password} = this.state
     return (
-      <div className="page-layout">
+      <div className="authLayout">
         <button className="backButtonS" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="container">
           <form onSubmit={this.handleSubmit}>

@@ -1,8 +1,5 @@
-.page-layout{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    display: flex;
+.authLayout{
+    padding: 10px;
 }
 
 .container {
@@ -30,7 +27,6 @@ button {
     max-width: 380px;
     margin-top: 1vh;
 }
-  
 
 .backButtonS {
     height: 5px;

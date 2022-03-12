@@ -4,17 +4,21 @@ require('dotenv').config()
 const secretKey = process.env.SECRET_KEY
 
 const getToken = (request, response, next) => {
-	const token = request.headers['authorization'].split(' ')[1]
+	const token = request.headers['authorization']?.split(' ')[1]
 	response.locals.token = token
 	next()
 }
 
 const verifyToken = (request, response, next) => {
 	let token = response.locals.token
-	jwt.verify(token, secretKey, (err, t) => {
+	console.log(token)
+	jwt.verify(token, secretKey, (err, decoded) => {
+		console.log(decoded)
 		if (err) {
-			return response.status(401).json({ msg: 'Invalid Token' })
+			console.log('hitting err')
+			return response.status(401).send('Invalid Token.')
 		}
+		request.user = decoded._id
 		return next()
 	})
 }

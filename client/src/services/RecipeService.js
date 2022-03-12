@@ -44,4 +44,3 @@ export const __DeleteRecipe = async (recipeid) => {
     throw error
   }
 }
-

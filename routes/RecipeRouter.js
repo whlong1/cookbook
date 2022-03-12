@@ -2,6 +2,8 @@ const Router = require('express').Router()
 
 const RecipeController = require('../controllers/RecipeController')
 
+const { getToken, verifyToken } = require('../middleware/JwtHandler')
+
 Router.post('/add', RecipeController.AddRecipe)
 //POST-> localhost:3001/home/recipes/add
 
@@ -17,7 +19,7 @@ Router.get('/get/:recipe_id', RecipeController.GetRecipeById)
 Router.get('/sort/:style', RecipeController.ListRecipesByStyle)
 //GET-> localhost:3001/home/recipes/sort/Fast Food
 
-Router.delete('/delete/:id', RecipeController.DeleteRecipe)
+Router.delete('/delete/:id', getToken, verifyToken, RecipeController.DeleteRecipe)
 //DELETE-> localhost:3001/home/recipes/delete/5fb008037135f341060cb0a9
 
 Router.put('/edit/:id', RecipeController.UpdateRecipe)

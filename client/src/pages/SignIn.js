@@ -34,7 +34,7 @@ export default class SignIn extends Component {
   render() {
     const {email, password} = this.state
     return (
-      <div className="pageLayout">
+      <div className="authLayout">
         <button className="backButtonS" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="container">
           <form onSubmit={this.handleSubmit}>

@@ -8,13 +8,13 @@ import { __AddReview } from '../services/ReviewService'
 import TextInput from '../components/TextInput'
 import ReviewCard from '../components/ReviewCard'
 
-
 export default class RecipeDetails extends Component {
   constructor() {
     super()
     this.state = {
       recipe: null,
       text: '',
+      error: '',
     }
   }
 
@@ -31,8 +31,9 @@ export default class RecipeDetails extends Component {
     try {
       await __DeleteRecipe(recipeId)
       this.props.history.push(`/`)
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err.response.data)
+      this.setState({ error: err.response.data })
     }
   }
 
@@ -59,9 +60,30 @@ export default class RecipeDetails extends Component {
       height: "108vh",
       width: "100%",
     }
+    const errorStyle = {
+      width: "100vw",
+      height: "100vh",
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "column",
+      justifyContent: "center"
+    }
 
     const recentReviews = recipe?.reviews.length && recipe.reviews.reverse().slice(0, 6)
-    
+
+    if (this.state.error) {
+      return (
+        <div style={errorStyle}>
+          <h1>
+            Nope
+          </h1>
+          <button onClick={() => this.props.history.push('/login')}>
+            Login
+          </button>
+        </div>
+      )
+    }
+
     if (this.state.recipe) {
       return (
         <>

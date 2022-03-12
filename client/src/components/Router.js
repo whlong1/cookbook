@@ -16,8 +16,6 @@ import AllCuisine from '../pages/AllCuisine'
 import LoadingScreen from '../components/LoadingScreen'
 import NavBar from '../components/NavBar'
 
-
-
 class Router extends Component {
   constructor() {
     super()
@@ -28,7 +26,6 @@ class Router extends Component {
     }
   }
 
-
   componentDidMount() {
     this.verifyTokenValid()
     setTimeout(() => {
@@ -37,7 +34,6 @@ class Router extends Component {
     }, 2000);
     this.getAll()
   }
-
 
   getAll = async () => {
     try {
@@ -75,11 +71,9 @@ class Router extends Component {
     this.setState({ pageLoading: false })
   }
 
-
   render() {
     return (
-      <main style={{height: "100vh"}}>
-
+      <main style={{ height: "100vh" }}>
         {this.state.pageLoading ? (
           <LoadingScreen />
         ) : (
@@ -94,7 +88,6 @@ class Router extends Component {
                   ></Home>
                 )}
               />
-
               <Route
                 path="/signup"
                 component={(props) => (
@@ -147,7 +140,6 @@ class Router extends Component {
                   />
                 )}
               />
-
             </Switch>
           </>
         )}

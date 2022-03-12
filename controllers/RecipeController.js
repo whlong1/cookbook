@@ -76,10 +76,14 @@ const ListRecipesByStyle = async (request, response) => {
 
 
 const DeleteRecipe = async (request, response) => {
+	console.log('hit!!!1')
 	try {
-		const { id } = request.params
-		const deleted = await Recipe.findByIdAndDelete(id)
-		if (deleted) {
+		const recipe = await Recipe.findById(request.params.id)
+		console.log('TRY', recipe)
+		console.log('Check Equality', recipe.author === request.user)
+		if (recipe.author === request.user) {
+			recipe.delete()
+			// const deletedRecipe = await Recipe.findByIdAndDelete(request.params.id)
 			return response.status(200).send("Recipe Removed")
 		}
 		throw new Error("Recipe not found")
