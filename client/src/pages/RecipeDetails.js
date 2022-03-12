@@ -51,8 +51,14 @@ export default class RecipeDetails extends Component {
   }
 
   render() {
-    console.log(this.state.recipe)
-    const { recipe, review, reviews, text } = this.state
+    const { recipe, text } = this.state
+    const imageStyle = {
+      backgroundImage: `url(${recipe?.image})`,
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      height: "108vh",
+      width: "100%",
+    }
     if (this.state.recipe) {
       return (
         <div className="pageLayoutD">
@@ -110,10 +116,7 @@ export default class RecipeDetails extends Component {
               </div>
             </section>
             <section className="rightSideD">
-              <div>
-                <img
-                  className="pagePhotoD"
-                  src={recipe.image} alt="an example of the current recipe" />
+              <div style={imageStyle}>
               </div>
             </section>
           </div>
