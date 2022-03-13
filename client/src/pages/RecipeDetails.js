@@ -28,7 +28,7 @@ export default class RecipeDetails extends Component {
       recipe: {
         _id: data._id,
         title: data.title,
-        author: data.author.name,
+        author: data.author,
         prep_time: data.prep_time,
         description: data.description,
         image: data.image,
@@ -83,17 +83,18 @@ export default class RecipeDetails extends Component {
       flexDirection: "column",
       justifyContent: "center"
     }
-    
+
     const recentReviews = reviews?.length && reviews.reverse().slice(0, 6)
 
     if (this.state.error) {
       return (
         <div style={errorStyle}>
-          <h1>
-            Nope
-          </h1>
+          <h3>
+            You don't have permission to do that!
+          </h3>
+          <p>Already have an account? </p>
           <button onClick={() => this.props.history.push('/login')}>
-            Login
+            Click here to Login
           </button>
         </div>
       )
@@ -110,10 +111,12 @@ export default class RecipeDetails extends Component {
             <section className="leftSideD">
               <div className="recipeHeaderD">
                 <h2 className="recTitleD">{recipe.title}</h2>
-                <div className="userButtons">
-                  <button className="uB" onClick={() => this.delete(recipe._id)}>Delete</button>
-                  <button className="uB" onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit</button>
-                </div>
+                {this.props.currentUser === recipe.author._id &&
+                  <div className="userButtons">
+                    <button className="uB" onClick={() => this.delete(recipe._id)}>Delete</button>
+                    <button className="uB" onClick={() => this.props.history.push(`/home/recipes/edit/${recipe._id}`)}>Edit</button>
+                  </div>
+                }
               </div>
               <div className="descriptionD">
                 <p>
@@ -121,7 +124,7 @@ export default class RecipeDetails extends Component {
                     Author:
                   </span>
                   <span>
-                    {recipe.author}
+                    {recipe.author.name}
                   </span>
                 </p>
                 <p>
@@ -161,22 +164,25 @@ export default class RecipeDetails extends Component {
                     <div></div>
                   )}
                 </div>
-                <div className="entryD">
-                  <form className="formBoxD" onSubmit={this.handleSubmit}>
-                    <textarea
-                      required
-                      name="text"
-                      type="text"
-                      value={text}
-                      autoComplete="off"
-                      className="typeHereD"
-                      style={{resize: "none"}}
-                      placeholder=" Leave a Review"
-                      onChange={this.handleChange}
-                    />
-                    <button className="subButtonD" type="submit">POST REVIEW</button>
-                  </form>
-                </div>
+                {this.props.currentUser &&
+                  <div className="entryD">
+                    <form className="formBoxD" onSubmit={this.handleSubmit}>
+                      <textarea
+                        required
+                        name="text"
+                        type="text"
+                        value={text}
+                        autoComplete="off"
+                        className="typeHereD"
+                        style={{ resize: "none" }}
+                        placeholder=" Leave a Review"
+                        onChange={this.handleChange}
+                      />
+                      <button className="subButtonD" type="submit">POST REVIEW</button>
+                    </form>
+                  </div>
+                }
+
               </div>
             </section>
             <section className="rightSideD">
