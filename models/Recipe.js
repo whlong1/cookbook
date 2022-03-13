@@ -1,6 +1,14 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const Review = new Schema(
+  {
+    text: { type: String, required: true },
+    author: { type: Schema.Types.ObjectId, ref: 'User' },
+  },
+  { timestamps: true }
+)
+
 const Recipe = new Schema(
   {
     title: {
@@ -9,9 +17,9 @@ const Recipe = new Schema(
     },
     author: { type: Schema.Types.ObjectId, ref: 'User' },
     prep_time: {
-        type: String,
-        required: true
-      },
+      type: String,
+      required: true
+    },
     description: {
       type: String
     },
@@ -23,12 +31,7 @@ const Recipe = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Cuisine'
     },
-    reviews: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Review'
-      }
-    ]
+    reviews: [Review]
   },
   { timestamps: true }
 )

@@ -25,6 +25,8 @@ Router.delete('/delete/:id', getToken, verifyToken, RecipeController.DeleteRecip
 Router.put('/edit/:id', RecipeController.UpdateRecipe)
 //PUT->localhost:3001/home/recipes/edit/
 
+Router.post('/:recipe_id/reviews', getToken, verifyToken, RecipeController.AddReview)
+
 
 module.exports = Router
 

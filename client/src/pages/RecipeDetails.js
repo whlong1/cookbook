@@ -5,7 +5,6 @@ import { __GetRecipe } from '../services/RecipeService'
 import { __DeleteRecipe } from '../services/RecipeService'
 import { __AddReview } from '../services/ReviewService'
 
-import TextInput from '../components/TextInput'
 import ReviewCard from '../components/ReviewCard'
 
 export default class RecipeDetails extends Component {
@@ -46,6 +45,7 @@ export default class RecipeDetails extends Component {
     event.preventDefault()
     try {
       await __AddReview(this.state, this.props.match.params.recipe_id)
+      this.setState({ text: "" })
       this.getRecipeDetails()
     } catch (error) {
       console.log(error)
@@ -149,12 +149,13 @@ export default class RecipeDetails extends Component {
                 </div>
                 <div className="entryD">
                   <form className="formBoxD" onSubmit={this.handleSubmit}>
-                    <TextInput
-                      className="typeHereD"
-                      fieldType="textfield"
-                      placeholder="Leave a Review"
+                    <input
+                      required
                       name="text"
+                      type="text"
                       value={text}
+                      className="typeHereD"
+                      placeholder=" Leave a Review"
                       onChange={this.handleChange}
                     />
                     <button className="subButtonD" type="submit">POST REVIEW</button>

@@ -38,7 +38,7 @@ const FindRecipe = async (request, response) => {
 const GetRecipeById = async (request, response) => {
 	try {
 		const { recipe_id } = request.params
-		const recipe = await Recipe.findById(recipe_id).populate('reviews').populate('author')
+		const recipe = await Recipe.findById(recipe_id).populate('author')
 		response.send(recipe)
 	}
 	catch (error) {
@@ -61,7 +61,7 @@ const DeleteRecipe = async (request, response) => {
 		const recipe = await Recipe.findById(request.params.id)
 		if (recipe.author.equals(request.user)) {
 			const cuisine = await Cuisine.findById(recipe.cuisine_id)
-			cuisine.recipes.remove({_id: recipe._id})
+			cuisine.recipes.remove({ _id: recipe._id })
 			cuisine.save()
 			recipe.delete()
 			return response.status(200).send("Recipe Removed")
@@ -90,7 +90,21 @@ const UpdateRecipe = async (request, response) => {
 }
 
 
+const AddReview = async (request, response) => {
+	try {
+		request.body.author = request.user
+		const recipe = await Recipe.findById(request.params.recipe_id)
+		recipe.reviews.push(request.body)
+		recipe.save()
+		const review = recipe.reviews[recipe.reviews.length - 1]
+		response.send(review)
+	} catch (error) {
+		throw error
+	}
+}
+
 module.exports = {
+	AddReview,
 	AddRecipe,
 	AllRecipes,
 	FindRecipe,

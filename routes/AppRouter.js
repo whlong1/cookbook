@@ -6,9 +6,8 @@ const ReviewRouter = require('./ReviewRouter')
 const CuisineRouter = require('./CuisineRouter')
 
 
-Router.use('/recipes', RecipeRouter)
 Router.use('/users', UserRouter)
-Router.use('/reviews', ReviewRouter)
+Router.use('/recipes', RecipeRouter)
 Router.use('/cuisine', CuisineRouter)
 
 
