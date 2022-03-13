@@ -60,6 +60,9 @@ const DeleteRecipe = async (request, response) => {
 	try {
 		const recipe = await Recipe.findById(request.params.id)
 		if (recipe.author.equals(request.user)) {
+			const cuisine = await Cuisine.findById(recipe.cuisine_id)
+			cuisine.recipes.remove({_id: recipe._id})
+			cuisine.save()
 			recipe.delete()
 			return response.status(200).send("Recipe Removed")
 		}
