@@ -1,4 +1,3 @@
-const User = require('../models/User')
 const Cuisine = require('../models/Cuisine')
 const Recipe = require('../models/Recipe')
 
@@ -60,7 +59,7 @@ const ListRecipesByStyle = async (request, response) => {
 const DeleteRecipe = async (request, response) => {
 	try {
 		const recipe = await Recipe.findById(request.params.id)
-		if (recipe.author === request.user) {
+		if (recipe.author.equals(request.user)) {
 			recipe.delete()
 			return response.status(200).send("Recipe Removed")
 		}
