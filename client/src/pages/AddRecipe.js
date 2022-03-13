@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import TextInput from '../components/TextInput'
-import '../styles/AddRecipe.css'
 import { __AddRecipe } from '../services/RecipeService'
+import '../styles/AddRecipe.css'
 
 export default class AddRecipe extends Component {
   constructor(props) {

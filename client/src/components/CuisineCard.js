@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/CardDesign.css'
 
-
 export default class CuisineCard extends Component {
   render() {
     const imageStyle = {
