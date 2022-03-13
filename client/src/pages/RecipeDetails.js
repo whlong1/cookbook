@@ -26,6 +26,7 @@ export default class RecipeDetails extends Component {
     const data = await __GetRecipe(this.props.match.params.recipe_id)
     this.setState({
       recipe: {
+        _id: data._id,
         title: data.title,
         author: data.author.name,
         prep_time: data.prep_time,
@@ -82,8 +83,7 @@ export default class RecipeDetails extends Component {
       flexDirection: "column",
       justifyContent: "center"
     }
-
-    console.log(this.props)
+    
     const recentReviews = reviews?.length && reviews.reverse().slice(0, 6)
 
     if (this.state.error) {

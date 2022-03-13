@@ -9,5 +9,3 @@ const RecipeCard = ({review}) => (
 )
 
 export default RecipeCard
-
-
