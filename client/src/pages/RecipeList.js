@@ -27,6 +27,20 @@ export default class RecipeList extends Component {
 
   render() {
     const { recipes } = this.state
+
+    if (!recipes.length) {
+      return (
+        <div className="pageLayout">
+          <div className="pageSpread">
+            <button className="backButtonL" onClick={() => this.props.history.goBack()}>Back</button>
+            <div className="leftSide">
+              <h1>No Recipes</h1>
+            </div>
+          </div>
+      </div>
+      )
+    }
+
     return (
       <div className="pageLayout">
         {this.state.recipes.length ?
@@ -51,5 +65,3 @@ export default class RecipeList extends Component {
     )
   }
 }
-
-

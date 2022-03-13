@@ -14,10 +14,10 @@ export default class AllCuisine extends Component {
               {cuisine.map((cuisine) => (
                 <CuisineCard
                   key={cuisine._id}
-                  onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine._id}`)}
                   name={cuisine.name}
                   image={cuisine.image}
                   recipes={cuisine.recipes}
+                  onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine._id}`)}
                 />
               ))}
             </div>
