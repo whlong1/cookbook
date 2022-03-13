@@ -163,12 +163,14 @@ export default class RecipeDetails extends Component {
                 </div>
                 <div className="entryD">
                   <form className="formBoxD" onSubmit={this.handleSubmit}>
-                    <input
+                    <textarea
                       required
                       name="text"
                       type="text"
                       value={text}
+                      autoComplete="off"
                       className="typeHereD"
+                      style={{resize: "none"}}
                       placeholder=" Leave a Review"
                       onChange={this.handleChange}
                     />

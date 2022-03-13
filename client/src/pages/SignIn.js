@@ -38,18 +38,29 @@ export default class SignIn extends Component {
         <button className="backButtonS" onClick={() => this.props.history.goBack()}>Back</button>
         <div className="container">
           <form onSubmit={this.handleSubmit}>
-            <TextInput
-              placeholder="Email"
+            <label>Email</label>
+            <input
               name="email"
               type="email"
               value={email}
+              autoComplete="off"
+              placeholder="Email"
               onChange={this.handleChange}
             />
-            <TextInput
-              placeholder="Password"
+            <input
+              hidden
+              name="name"
+              type="text"
+              autoComplete="off"
+              placeholder="Name"
+            />
+            <label>Password</label>
+            <input
               name="password"
-              value={password}
               type="password"
+              value={password}
+              autoComplete="off"
+              placeholder="Password"
               onChange={this.handleChange}
             />
             <button className="subButtonS" type="submit">SIGN IN</button>
