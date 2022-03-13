@@ -1,6 +1,7 @@
-const express = require('express');
-const AppRouter = require('./routes/AppRouter');
+require('dotenv').config()
+const express = require('express')
 const db = require('./db/index')
+const AppRouter = require('./routes/AppRouter')
 const logger = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -29,4 +30,3 @@ app.get('*', (req, res) =>
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
-

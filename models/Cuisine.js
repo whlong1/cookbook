@@ -13,11 +13,11 @@ const Cuisine = new Schema(
     recipes: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'recipes'
+        ref: 'Recipe'
       }
     ]
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('cuisine', Cuisine)
+module.exports = mongoose.model('Cuisine', Cuisine)

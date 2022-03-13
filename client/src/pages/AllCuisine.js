@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-
-
 import '../styles/ListPages.css'
-// import Panel from '../assets/panels4.jpg'
-
 import CuisineCard from '../components/CuisineCard'
 import LoadingScreen from '../components/LoadingScreen'
 
@@ -18,7 +14,7 @@ export default class AllCuisine extends Component {
               {cuisine.map((cuisine) => (
                 <CuisineCard
                   key={cuisine._id}
-                  onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine.name}`)}
+                  onClick={() => this.props.history.push(`/home/recipes/sort/${cuisine._id}`)}
                   name={cuisine.name}
                   image={cuisine.image}
                   recipes={cuisine.recipes}

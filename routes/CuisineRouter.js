@@ -18,6 +18,4 @@ Router.delete('/delete/:id', CuisineController.DeleteCuisine)
 
 Router.put('/edit/:id', CuisineController.UpdateCuisine)
 
-
 module.exports = Router
-

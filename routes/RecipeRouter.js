@@ -4,7 +4,7 @@ const RecipeController = require('../controllers/RecipeController')
 
 const { getToken, verifyToken } = require('../middleware/JwtHandler')
 
-Router.post('/add', RecipeController.AddRecipe)
+Router.post('/add', getToken, verifyToken, RecipeController.AddRecipe)
 //POST-> localhost:3001/home/recipes/add
 
 Router.get('/all', RecipeController.AllRecipes)
@@ -16,7 +16,7 @@ Router.get('/search/:recipeName', RecipeController.FindRecipe)
 Router.get('/get/:recipe_id', RecipeController.GetRecipeById)
 //GET-> localhost:3001/home/recipes/get/5fb007ef7135f341060cb0a8
 
-Router.get('/sort/:style', RecipeController.ListRecipesByStyle)
+Router.get('/sort/:cuisine_id', RecipeController.ListRecipesByStyle)
 //GET-> localhost:3001/home/recipes/sort/Fast Food
 
 Router.delete('/delete/:id', getToken, verifyToken, RecipeController.DeleteRecipe)

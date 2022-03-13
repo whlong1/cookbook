@@ -1,10 +1,7 @@
 const User = require('../models/User');
 const jwt = require("jsonwebtoken")
-const {
-  checkPassword,
-  generatePassword
-} = require('../middleware/PasswordHandler')
 
+const { checkPassword, generatePassword } = require('../middleware/PasswordHandler')
 
 const AddUser = async (request, response) => {
   try {
@@ -25,7 +22,6 @@ const AddUser = async (request, response) => {
 const SignInUser = async (request, response, next) => {
   try {
     const user = await User.findOne({ email: request.body.email })
-    console.log(user)
     if (
       user &&
       (await checkPassword(request.body.password, user.password_digest))
@@ -97,9 +93,6 @@ const UpdateUser = async (request, response) => {
   }
 }
 
-
-
-
 module.exports = {
   SignInUser,
   RefreshSession,
@@ -108,4 +101,3 @@ module.exports = {
   DeleteUser,
   UpdateUser
 }
-

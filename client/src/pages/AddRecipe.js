@@ -4,90 +4,74 @@ import '../styles/AddRecipe.css'
 import { __AddRecipe } from '../services/RecipeService'
 
 export default class AddRecipe extends Component {
-  constructor() {
+  constructor(props) {
     super()
     this.state = {
       title: '',
-      author: '',
+      image: '',
       prep_time: '',
       description: '',
-      image: 'https://i.imgur.com/HnXleJ9.jpg',
-      style: '',
-      cuisine_id: ''
+      cuisine_id: props.cuisine[0]?._id
     }
   }
 
   handleChange = ({ target }) => {
-    let cuisineList = this.props.cuisine
-    if (target.name === 'style') {
-      let styleName = target.value.toUpperCase()
-      this.setState({ [target.name]: styleName })
-      for (let i = 0; i < cuisineList.length; i++) {
-        if (cuisineList[i].name === target.value || cuisineList[i].name === styleName) {
-          this.setState({ cuisine_id: cuisineList[i]._id })
-        }
-      }
-    } else {
-      this.setState({ [target.name]: target.value })
-    }
+    this.setState({ [target.name]: target.value })
   }
 
   handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      let stored = await __AddRecipe(this.state)
-      this.props.history.push(`/home/recipes/get/${stored.recipe._id}`)
+      const data = await __AddRecipe(this.state)
+      this.props.history.push(`/home/recipes/get/${data.recipe._id}`)
     } catch (error) {
       console.log(error)
     }
   }
 
-
-
   render() {
-    const { title, author, prep_time, description, image, style } = this.state
+    const { title, prep_time, description, image } = this.state
     return (
       <div>
         <button onClick={() => this.props.history.push(`/`)}>HOME</button>
         <div><h2>ADD RECIPE</h2></div>
         <form onSubmit={this.handleSubmit}>
-          <TextInput
-            placeholder="title"
+          <input
+            required
             name="title"
             value={title}
+            placeholder="Title"
             onChange={this.handleChange}
           />
-          <TextInput
-            placeholder="author"
-            name="author"
-            value={author}
-            onChange={this.handleChange}
-          />
-          <TextInput
-            placeholder="prep_time"
+          <input
+            required
             name="prep_time"
             value={prep_time}
+            placeholder="Prep Time"
             onChange={this.handleChange}
           />
-          <TextInput
-            fieldType="textfield"
-            placeholder="description"
+          <input
+            required
             name="description"
             value={description}
+            type="text"
+            placeholder="Description"
             onChange={this.handleChange}
           />
-          <TextInput
-            placeholder="image"
+          <input
             name="image"
             value={image}
+            placeholder="Image URL"
             onChange={this.handleChange}
+            pattern="/(https?:\/\/.*\.(?:png|jpg))/i"
           />
-          <TextInput
-            placeholder="style"
-            name="style"
-            value={style}
-            onChange={this.handleChange}
-          />
+          <select name="cuisine_id" onChange={this.handleChange}>
+            {this.props.cuisine.map((cuisine) => (
+              <option key={cuisine._id} value={cuisine._id}>
+                {cuisine.name}
+              </option>
+            ))}
+          </select>
           <button type="submit">POST RECIPE</button>
         </form>
       </div>

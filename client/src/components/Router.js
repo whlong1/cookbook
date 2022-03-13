@@ -39,6 +39,7 @@ class Router extends Component {
   getAll = async () => {
     try {
       const data = await __GetAllCuisine()
+      console.log(data)
       this.setState({ cuisine: data.cuisine })
     } catch (error) {
       console.log(error)
@@ -46,19 +47,15 @@ class Router extends Component {
   }
 
   verifyTokenValid = async () => {
-    console.log('verify Token valid')
     const token = localStorage.getItem('token')
-    console.log(token)
     if (token) {
       try {
         const session = await __CheckSession()
-        console.log('SESSION',session)
         this.setState(
           {
             currentUser: session.user,
             authenticated: true
-          },
-          () => this.props.history.push('/')
+          }
         )
       } catch (error) {
         this.setState({ currentUser: null, authenticated: false })
@@ -76,7 +73,6 @@ class Router extends Component {
   }
 
   render() {
-
     console.log(this.state.currentUser)
     return (
       <main style={{ height: "100vh" }}>

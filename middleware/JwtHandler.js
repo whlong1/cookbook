@@ -11,11 +11,8 @@ const getToken = (request, response, next) => {
 
 const verifyToken = (request, response, next) => {
 	let token = response.locals.token
-	console.log(token)
 	jwt.verify(token, secretKey, (err, decoded) => {
-		console.log(decoded)
 		if (err) {
-			console.log('hitting err')
 			return response.status(401).send('Invalid Token.')
 		}
 		request.user = decoded._id
@@ -27,9 +24,6 @@ const createToken = (request, response) => {
 	const token = jwt.sign(response.locals.payload, secretKey)
 	response.send({ user: response.locals.payload, token })
 }
-
-
-
 
 module.exports = {
 	createToken,

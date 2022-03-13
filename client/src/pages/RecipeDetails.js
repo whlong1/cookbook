@@ -24,6 +24,7 @@ export default class RecipeDetails extends Component {
 
   getRecipeDetails = async () => {
     const data = await __GetRecipe(this.props.match.params.recipe_id)
+    data.author = data.author.name
     this.setState({ recipe: data, reviews: data.reviews })
   }
 
@@ -172,5 +173,3 @@ export default class RecipeDetails extends Component {
     return <h6>LOADING</h6>
   }
 }
-
-

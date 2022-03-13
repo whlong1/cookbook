@@ -7,10 +7,7 @@ const Recipe = new Schema(
       type: String,
       required: true
     },
-    author: {
-      type: String,
-      required: true
-    },
+    author: { type: Schema.Types.ObjectId, ref: 'User' },
     prep_time: {
         type: String,
         required: true
@@ -20,27 +17,20 @@ const Recipe = new Schema(
     },
     image: {
       type: String,
+      default: "https://i.imgur.com/HnXleJ9.jpg"
     },
-    user_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
-      },
     cuisine_id: {
       type: Schema.Types.ObjectId,
-      ref: 'cuisine'
-    },
-    style: {
-      type: String,
-      required: true
+      ref: 'Cuisine'
     },
     reviews: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'reviews'
+        ref: 'Review'
       }
     ]
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('recipes', Recipe)
+module.exports = mongoose.model('Recipe', Recipe)
