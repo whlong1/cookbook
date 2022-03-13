@@ -113,7 +113,7 @@ class Router extends Component {
               <Route
                 path="/home/recipes/get/:recipe_id"
                 component={(props) => (
-                  <RecipeDetails {...props} />
+                  <RecipeDetails {...props} currentUser={this.state.currentUser} />
                 )}
               />
               <Route

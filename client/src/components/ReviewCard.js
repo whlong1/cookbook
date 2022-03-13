@@ -1,9 +1,9 @@
 import React from 'react'
 
-const RecipeCard = ({text}) => (
+const RecipeCard = ({review}) => (
   <div>
     <div>
-        <p> • Anonymous: {text}</p>
+        <p> • {review.author.name}: {review.text}</p>
     </div>
   </div>
 )

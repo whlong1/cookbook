@@ -38,7 +38,7 @@ const FindRecipe = async (request, response) => {
 const GetRecipeById = async (request, response) => {
 	try {
 		const { recipe_id } = request.params
-		const recipe = await Recipe.findById(recipe_id).populate('author')
+		const recipe = await Recipe.findById(recipe_id).populate('author').populate('reviews.author')
 		response.send(recipe)
 	}
 	catch (error) {

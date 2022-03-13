@@ -3,7 +3,7 @@ import '../styles/Details.css'
 
 import { __GetRecipe } from '../services/RecipeService'
 import { __DeleteRecipe } from '../services/RecipeService'
-import { __AddReview } from '../services/ReviewService'
+import { __AddReview } from '../services/RecipeService'
 
 import ReviewCard from '../components/ReviewCard'
 
@@ -11,9 +11,10 @@ export default class RecipeDetails extends Component {
   constructor() {
     super()
     this.state = {
-      recipe: null,
       text: '',
       error: '',
+      reviews: [],
+      recipe: null,
     }
   }
 
@@ -23,8 +24,18 @@ export default class RecipeDetails extends Component {
 
   getRecipeDetails = async () => {
     const data = await __GetRecipe(this.props.match.params.recipe_id)
-    data.author = data.author.name
-    this.setState({ recipe: data, reviews: data.reviews })
+    this.setState({
+      recipe: {
+        title: data.title,
+        author: data.author.name,
+        prep_time: data.prep_time,
+        description: data.description,
+        image: data.image,
+        cuisine_id: data.cuisine_id,
+        reviews: data.reviews
+      },
+      reviews: [...data.reviews]
+    })
   }
 
   delete = async (recipeId) => {
@@ -45,15 +56,17 @@ export default class RecipeDetails extends Component {
     event.preventDefault()
     try {
       await __AddReview(this.state, this.props.match.params.recipe_id)
-      this.setState({ text: "" })
-      this.getRecipeDetails()
+      this.setState({
+        reviews: [...this.state.reviews, { author: this.props.currentUser, text: this.state.text }],
+        text: ""
+      })
     } catch (error) {
       console.log(error)
     }
   }
 
   render() {
-    const { recipe, text } = this.state
+    const { recipe, text, reviews } = this.state
     const imageStyle = {
       backgroundImage: `url(${recipe?.image})`,
       backgroundPosition: "center",
@@ -70,7 +83,8 @@ export default class RecipeDetails extends Component {
       justifyContent: "center"
     }
 
-    const recentReviews = recipe?.reviews.length && recipe.reviews.reverse().slice(0, 6)
+    console.log(this.props)
+    const recentReviews = reviews?.length && reviews.reverse().slice(0, 6)
 
     if (this.state.error) {
       return (
@@ -134,12 +148,12 @@ export default class RecipeDetails extends Component {
                   <p className="rTitle">User Reviews</p>
                 </div>
                 <div className="reviewListD">
-                  {recentReviews.length ? (
+                  {recentReviews?.length ? (
                     recentReviews.map((review) => (
                       <div className="reviewBlockD" key={review._id}>
                         <ReviewCard
                           key={review._id}
-                          text={review.text}
+                          review={review}
                         />
                       </div>
                     ))
